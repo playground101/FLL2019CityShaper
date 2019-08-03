@@ -24,7 +24,7 @@ class FLLMissionTableViewCell: UITableViewCell {
         codeLabel.text = mission.code
         descriptionLabel.text = mission.description
         let count = mission.details.count
-        stackViewHeight.constant = CGFloat((count * 20 ) +  (count * 60))
+        stackViewHeight.constant = CGFloat((count * 20 ) +  (count * 100))
         
         let details = mission.details
         
