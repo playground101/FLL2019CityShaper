@@ -15,6 +15,7 @@ struct Mission {
 }
 
 struct MissionDetail {
+    var id: String
     var task: String
     var points: Int
     var switchOn: Bool
@@ -22,21 +23,21 @@ struct MissionDetail {
     var stepper: Bool
     var maxStepperValue: Int
     var currentStepperValue: Int
-    
+    var dependency: String
 }
 
 extension FLLMissionsViewController {
     
     func loadMissionModels() -> [Mission] {
         //M01
-        let m011 = MissionDetail(task: "Is the robot supported by the bridge?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m012 = MissionDetail(task: "Number of flags that are clearly raised any distance, only by the robot:", points: 15, switchOn: false, tag: 1, stepper: true, maxStepperValue: 2, currentStepperValue: 0)
+        let m011 = MissionDetail(id: "m011", task: "Is the robot supported by the bridge?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
+        let m012 = MissionDetail(id: "m012", task: "Number of flags that are clearly raised any distance, only by the robot:", points: 15, switchOn: false, tag: 1, stepper: true, maxStepperValue: 2, currentStepperValue: 0, dependency: "")
         let m01 = Mission(code: "M01", description: "Elevated Places", details: [m011, m012])
-        
+        /*
         //M02
-        let m021 = MissionDetail(task: "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m022 = MissionDetail(task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m023 = MissionDetail(task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m021 = MissionDetail(id: "m021", task: "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
+        let m022 = MissionDetail(id: "m022", task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m023 = MissionDetail(task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue:0, dependency: "m022")
         let m02 = Mission(code: "M02", description: "Crane", details: [m021, m022, m023])
         
         //M03
@@ -68,7 +69,7 @@ extension FLLMissionsViewController {
         
         //M09
         let m091 = MissionDetail(task: "Is the Test Building Independent and Supported only by the blue beams?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m092 = MissionDetail(task: "Number of blue beams knocked out at least half way:", points: 10, switchOn: false, tag: 1, stepper: true, maxStepperValue: 6, currentStepperValue: 0)
+        let m092 = MissionDetail(task: "Number of blue beams knocked out at least half way:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 6, currentStepperValue: 0)
         let m09 = Mission(code: "M09", description: "Safety Factor", details: [m091, m092])
         
         //M10
@@ -93,7 +94,9 @@ extension FLLMissionsViewController {
         //M14
         let m141 = MissionDetail(task: "Number of Precision Tokens left on the field:", points: 5, switchOn: false, tag: 0, stepper: true, maxStepperValue: 6, currentStepperValue: 6)
         let m14 = Mission(code: "M14", description: "Precision", details: [m141])
-        
-        return [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14]
+ */
+        return [m01]//, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14]
+ 
     }
 }
+
