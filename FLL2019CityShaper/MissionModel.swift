@@ -36,8 +36,8 @@ extension FLLMissionsViewController {
         
         //M02
         let m021 = MissionDetail(id: "m021", task: "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
-        let m022 = MissionDetail(id: "m022", task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
-        let m023 = MissionDetail(id: "m023", task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue:0, dependency: "m022")
+        let m022 = MissionDetail(id: "m022", task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "m023")
+        let m023 = MissionDetail(id: "m023", task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue:0, dependency: "")
         let m02 = Mission(code: "M02", description: "Crane", details: [m021, m022, m023])
         
         //M03
@@ -68,8 +68,8 @@ extension FLLMissionsViewController {
         let m08 = Mission(code: "M08", description: "Elevator", details: [m081,m082])
         
         //M09
-        let m091 = MissionDetail(id: "m091", task: "Is the Test Building Independent and Supported only by the blue beams?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
-        let m092 = MissionDetail(id: "m092", task: "Number of blue beams knocked out at least half way:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 6, currentStepperValue: 0, dependency: "m091")
+        let m091 = MissionDetail(id: "m091", task: "Is the Test Building Independent and Supported only by the blue beams?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "m092")
+        let m092 = MissionDetail(id: "m092", task: "Number of blue beams knocked out at least half way:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 6, currentStepperValue: 0, dependency: "")
         let m09 = Mission(code: "M09", description: "Safety Factor", details: [m091, m092])
         
         //M10
