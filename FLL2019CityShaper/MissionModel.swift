@@ -72,27 +72,27 @@ extension FLLMissionsViewController {
         let m09 = Mission(code: "M09", description: "Safety Factor", details: [m091, m092])
         
         //M10
-        let m101 = MissionDetail(task: "Is the Food Growth Chamber’s colors spun so the grey weight is DROPPED after green, but before tan using the Push Bar?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m10 = Mission(code: "M10", description: "Food Production", details: [m101])
+        let m101 = MissionDetail(task: "Is the Steel Structure standing, and is Independent and Supported only by its hinges?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m10 = Mission(code: "M10", description: "Steel Construction", details: [m101])
         
         //M11
-        let m111 = MissionDetail(task: "Is the spacecraft moved so fast and high that it stays up, by pressing/hitting the Strike Pad?", points: 24, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m11 = Mission(code: "M11", description: "Escape Velocity", details: [m111])
+        let m111 = MissionDetail(task: "Is the Structure bigger than a Blue Building Unit and built from the team’s white LEGO bricks?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m112 = MissionDetail(task: "Is the Structure partly in any circle?", points: 10, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m113 = MissionDetail(task: "Is the Structure completely in any circle?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m11 = Mission(code: "M11", description: "Innovative Architecture", details: [m111, m112, m113])
         
         //M12
-        let m121 = MissionDetail(task: "Satellites on or above the area between the two lines of Outer Orbit:", points: 8, switchOn: false, tag: 0, stepper: true, maxStepperValue: 3, currentStepperValue: 0)
-        let m12 = Mission(code: "M12", description: "Satellite Orbits", details: [m121])
+        let m121 = MissionDetail(task: "Number of Circles with a color-matching Unit, flat down on the Mat, and Completely in Circle:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 3, currentStepperValue: 0)
+        let m122 = MissionDetail(task: "Sum of height Levels of Independent Stacks at least partly in any Circle:", points: 4, switchOn: false, tag: 1, stepper: true, maxStepperValue: 4, currentStepperValue: 0)
+        let m12 = Mission(code: "M12", description: "Design and Build", details: [m121, m122])
        
         //M13
-        let m131 = MissionDetail(task: "Is the Observatory pointer tip completely in orange, or partly covering either of the orange end-borders?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m132 = MissionDetail(task: "Is the Observatory pointer tip completely in white?", points: 18, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m133 = MissionDetail(task: "Is the Observatory pointer tip completely in grey, or partly covering either of the grey end-borders?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m13 = Mission(code: "M13", description: "Observatory", details: [m131,m132, m133])
+        let m131 = MissionDetail(task: "Number of Upgrades that are Independent and Supported only by a Stack which is at least partly in a Circle:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 3, currentStepperValue: 0)
+        let m13 = Mission(code: "M13", description: "Sustainablity Upgrades", details: [m131])
         
         //M14
-        let m141 = MissionDetail(task: "Meteoroids touching the Mat and in the Center Section", points: 12, switchOn: false, tag: 0, stepper: true, maxStepperValue: 2, currentStepperValue: 0)
-        let m142 = MissionDetail(task: "Meteoroids touching the Mat and in Either Side Section:", points: 8, switchOn: false, tag: 0, stepper: true, maxStepperValue: 2, currentStepperValue: 0)
-        let m14 = Mission(code: "M14", description: "Meteoroid Deflection", details: [m141,m142])
+        let m141 = MissionDetail(task: "Number of Precision Tokens left on the field:", points: 5, switchOn: false, tag: 0, stepper: true, maxStepperValue: 6, currentStepperValue: 0)
+        let m14 = Mission(code: "M14", description: "Precision", details: [m141])
         
         return [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14]
     }
