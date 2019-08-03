@@ -29,15 +29,15 @@ extension FLLMissionsViewController {
     
     func loadMissionModels() -> [Mission] {
         //M01
-        let m011 = MissionDetail(task: "Has the Vehicle Payload rolled past the First Track Connection?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m012 = MissionDetail(task: "Has the Crew Payload rolled past the First Track Connection?", points: 14, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m013 = MissionDetail(task: "Has the Supply Payload rolled past the First Track Connection?", points: 10, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m01 = Mission(code: "M01", description: "Space Travel", details: [m011, m012, m013])
+        let m011 = MissionDetail(task: "Is the robot supported by the bridge?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m012 = MissionDetail(task: "Number of flags that are clearly raised any distance, only by the robot:", points: 15, switchOn: false, tag: 1, stepper: true, maxStepperValue: 2, currentStepperValue: 0)
+        let m01 = Mission(code: "M01", description: "Elevated Places", details: [m011, m012])
         
         //M02
-        let m021 = MissionDetail(task: "Are both Solar Panels angled towards the same field?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m022 = MissionDetail(task: "Is your Solar Panel angled towards the other field?", points: 18, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m02 = Mission(code: "M02", description: "Solar Panel Array", details: [m021, m022])
+        let m021 = MissionDetail(task: "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m022 = MissionDetail(task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m023 = MissionDetail(task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m02 = Mission(code: "M02", description: "Crane", details: [m021, m022, m023])
         
         //M03
         let m031 = MissionDetail(task: "Is the 2x4 brick ejected and completely in the Northeast Planet Area?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
@@ -100,13 +100,6 @@ extension FLLMissionsViewController {
         let m142 = MissionDetail(task: "Meteoroids touching the Mat and in Either Side Section:", points: 8, switchOn: false, tag: 0, stepper: true, maxStepperValue: 2, currentStepperValue: 0)
         let m14 = Mission(code: "M14", description: "Meteoroid Deflection", details: [m141,m142])
         
-        //M15
-        let m151 = MissionDetail(task: "Is the Lander intact, touching the Mat, and completely in its Target Circle?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m152 = MissionDetail(task: "Is the Lander intact, touching the Mat, and completely in the Northeast Planet Area?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m153 = MissionDetail(task: "Are both parts of the Lander completely in Base?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        
-        let m15 = Mission(code: "M15", description: "Lander Touch-Down", details: [m151,m152, m153])
-        
-        return [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14, m15]
+        return [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14]
     }
 }
