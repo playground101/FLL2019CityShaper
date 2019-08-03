@@ -36,32 +36,32 @@ extension FLLMissionsViewController {
         
         //M02
         let m021 = MissionDetail(id: "m021", task: "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
-        let m022 = MissionDetail(id: "m022", task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m023 = MissionDetail(task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue:0, dependency: "m022")
+        let m022 = MissionDetail(id: "m022", task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
+        let m023 = MissionDetail(id: "m023", task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue:0, dependency: "m022")
         let m02 = Mission(code: "M02", description: "Crane", details: [m021, m022, m023])
         
         //M03
-        let m031 = MissionDetail(task: "Is the Inspection Drone Supported by the axle on the Bridge?", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m031 = MissionDetail(id:"m031", task: "Is the Inspection Drone Supported by the axle on the Bridge?", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
         let m03 = Mission(code: "M03", description: "Inspection Drone", details: [m031])
         
         //M04
-        let m041 = MissionDetail(task: "Is the Bat Supported by the branch on the Tree?", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m041 = MissionDetail(id: "m041", task: "Is the Bat Supported by the branch on the Tree?", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
         let m04 = Mission(code: "M04", description: "Design For Wildlife", details: [m041])
         
         //M05
-        let m051 = MissionDetail(task: "Number of Units Independent and Supported by the Tree's Large Branches:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 16, currentStepperValue: 0)
-        let m052 = MissionDetail(task: "Number of Units Independent and Supported by the Tree's Small Branches:", points: 15, switchOn: false, tag: 1, stepper: true, maxStepperValue: 16, currentStepperValue: 0)
+        let m051 = MissionDetail(id: "m051", task: "Number of Units Independent and Supported by the Tree's Large Branches:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 16, currentStepperValue: 0, dependency: "")
+        let m052 = MissionDetail(id: "m052", task: "Number of Units Independent and Supported by the Tree's Small Branches:", points: 15, switchOn: false, tag: 1, stepper: true, maxStepperValue: 16, currentStepperValue: 0, dependency: "")
         let m05 = Mission(code: "M05", description: "Treehouse", details: [m051,m052])
         
         
         //M06
-        let m061 = MissionDetail(task: "Is the Traffic Jam lifted, its moving part Independent, and Supported only by its hinges:", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m061 = MissionDetail(id: "m061", task: "Is the Traffic Jam lifted, its moving part Independent, and Supported only by its hinges:", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
         let m06 = Mission(code: "M06", description: "Traffic Jam", details: [m061])
         
         //M07
-        let m071 = MissionDetail(task: "Is the Swing released?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m071 = MissionDetail(id: "m071", task: "Is the Swing released?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
         let m07 = Mission(code: "M07", description: "Swing", details: [m071])
-        
+       /*
         //M08
         let m081 = MissionDetail(id: "m081", task: "Are the Elevator’s moving parts Independent and Supported only by its hinges in the Blue Car Down position?", points: 15, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
         let m082 = MissionDetail(id: "m082", task: "Are the Elevator’s moving parts Independent and Supported only by its hinges in the Balanced position?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
