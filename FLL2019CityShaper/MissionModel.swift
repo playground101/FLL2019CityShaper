@@ -61,7 +61,7 @@ extension FLLMissionsViewController {
         //M07
         let m071 = MissionDetail(id: "m071", task: "Is the Swing released?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
         let m07 = Mission(code: "M07", description: "Swing", details: [m071])
-       /*
+       
         //M08
         let m081 = MissionDetail(id: "m081", task: "Are the Elevator’s moving parts Independent and Supported only by its hinges in the Blue Car Down position?", points: 15, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
         let m082 = MissionDetail(id: "m082", task: "Are the Elevator’s moving parts Independent and Supported only by its hinges in the Balanced position?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: "")
