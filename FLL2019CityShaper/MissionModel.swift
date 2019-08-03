@@ -40,13 +40,12 @@ extension FLLMissionsViewController {
         let m02 = Mission(code: "M02", description: "Crane", details: [m021, m022, m023])
         
         //M03
-        let m031 = MissionDetail(task: "Is the 2x4 brick ejected and completely in the Northeast Planet Area?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m032 = MissionDetail(task: "Is the 2x4 brick ejected and not completely in the Northeast Planet Area?", points: 18, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m03 = Mission(code: "M03", description: "3D Printing", details: [m031,m032])
+        let m031 = MissionDetail(task: "Is the Inspection Drone Supported by the axle on the Bridge?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m03 = Mission(code: "M03", description: "Inspection Drone", details: [m031])
         
         //M04
         let m041 = MissionDetail(task: "Has the weight-bearing features of the crossing equipment crossed the crater from east to west, making it completely past the flattened gate?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m04 = Mission(code: "M04", description: "Crater Crossing", details: [m041])
+        let m04 = Mission(code: "M04", description: "Design For Wildlife", details: [m041])
         
         //M05
         let m051 = MissionDetail(task: "Are all four samples no longer touching the axle holding them in in the Core Site Model?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
