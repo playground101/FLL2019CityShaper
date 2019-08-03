@@ -40,31 +40,26 @@ extension FLLMissionsViewController {
         let m02 = Mission(code: "M02", description: "Crane", details: [m021, m022, m023])
         
         //M03
-        let m031 = MissionDetail(task: "Is the Inspection Drone Supported by the axle on the Bridge?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m031 = MissionDetail(task: "Is the Inspection Drone Supported by the axle on the Bridge?", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
         let m03 = Mission(code: "M03", description: "Inspection Drone", details: [m031])
         
         //M04
-        let m041 = MissionDetail(task: "Has the weight-bearing features of the crossing equipment crossed the crater from east to west, making it completely past the flattened gate?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m041 = MissionDetail(task: "Is the Bat Supported by the branch on the Tree?", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
         let m04 = Mission(code: "M04", description: "Design For Wildlife", details: [m041])
         
         //M05
-        let m051 = MissionDetail(task: "Are all four samples no longer touching the axle holding them in in the Core Site Model?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m052 = MissionDetail(task: "Is the Gas Core Sample touching the mat completely in the Lander Target Circle?", points: 12, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m053 = MissionDetail(task: "Is the Gas Core Sample completely in Base?", points: 10, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m054 = MissionDetail(task: "Is the Water Core Sample placed so it is only supported by the Food Growth Chamber?", points: 8, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m05 = Mission(code: "M05", description: "Extraction", details: [m051,m052, m053, m054])
+        let m051 = MissionDetail(task: "Number of Units Independent and Supported by the Tree's Large Branches:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 16, currentStepperValue: 0)
+        let m052 = MissionDetail(task: "Number of Units Independent and Supported by the Tree's Small Branches:", points: 15, switchOn: false, tag: 1, stepper: true, maxStepperValue: 16, currentStepperValue: 0)
+        let m05 = Mission(code: "M05", description: "Treehouse", details: [m051,m052])
         
         
         //M06
-        let m061 = MissionDetail(task: "Is the Cone Module completely in Base?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m062 = MissionDetail(task: "Is the Tube Module inserted into the west side of the Habitation Hub?", points: 16, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m063 = MissionDetail(task: "Is the Dock Module transferred/inserted into the east side of the Habitation Hub?", points: 14, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m06 = Mission(code: "M06", description: "Space Station Modules", details: [m061,m062, m063])
+        let m061 = MissionDetail(task: "Is the Traffic Jam lifted, its moving part Independent, and Supported only by its hinges:", points: 10, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m06 = Mission(code: "M06", description: "Space Station Modules", details: [m061])
         
         //M07
-        let m071 = MissionDetail(task: "Is Gerhard inserted partially into the Habitation Hub's Airlock Chamber?", points: 18, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m072 = MissionDetail(task: "Is Gerhard inserted completely into the Habitation Hub's Airlock Chamber?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m07 = Mission(code: "M07", description: "Space Walk Emergency", details: [m071, m072])
+        let m071 = MissionDetail(task: "Is the Swing released?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m07 = Mission(code: "M07", description: "Space Walk Emergency", details: [m071])
         
         //M08
         let m081 = MissionDetail(task: "Are the Elevator’s moving parts Independent and Supported only by its hinges in the Blue Car Down position?", points: 15, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
