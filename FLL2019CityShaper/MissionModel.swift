@@ -91,7 +91,7 @@ extension FLLMissionsViewController {
         let m13 = Mission(code: "M13", description: "Sustainablity Upgrades", details: [m131])
         
         //M14
-        let m141 = MissionDetail(task: "Number of Precision Tokens left on the field:", points: 5, switchOn: false, tag: 0, stepper: true, maxStepperValue: 6, currentStepperValue: 0)
+        let m141 = MissionDetail(task: "Number of Precision Tokens left on the field:", points: 5, switchOn: false, tag: 0, stepper: true, maxStepperValue: 6, currentStepperValue: 6)
         let m14 = Mission(code: "M14", description: "Precision", details: [m141])
         
         return [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11, m12, m13, m14]
