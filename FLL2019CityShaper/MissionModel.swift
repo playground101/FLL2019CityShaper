@@ -68,14 +68,14 @@ extension FLLMissionsViewController {
         let m07 = Mission(code: "M07", description: "Space Walk Emergency", details: [m071, m072])
         
         //M08
-        let m081 = MissionDetail(task: "Is the Exercise pointer tip completely in orange, or partly covering either of the orange end-borders?", points: 22, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m082 = MissionDetail(task: "Is the Exercise pointer tip completely in white?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m083 = MissionDetail(task: "Is the Exercise pointer tip completely in grey, or partly covering either of the grey end-borders?", points: 18, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m08 = Mission(code: "M08", description: "Aerobic Exercise", details: [m081,m082,m083])
+        let m081 = MissionDetail(task: "Are the Elevator’s moving parts Independent and Supported only by its hinges in the Blue Car Down position?", points: 15, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m082 = MissionDetail(task: "Are the Elevator’s moving parts Independent and Supported only by its hinges in the Balanced position?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m08 = Mission(code: "M08", description: "Elevator", details: [m081,m082])
         
         //M09
-        let m091 = MissionDetail(task: "Is the Strength Bar lifted so the tooth-strip’s 4th hole comes at least partly into view?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
-        let m09 = Mission(code: "M09", description: "Strength Exercise", details: [m091])
+        let m091 = MissionDetail(task: "Is the Test Building Independent and Supported only by the blue beams?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
+        let m092 = MissionDetail(task: "Number of blue beams knocked out at least half way:", points: 10, switchOn: false, tag: 1, stepper: true, maxStepperValue: 6, currentStepperValue: 0)
+        let m09 = Mission(code: "M09", description: "Safety Factor", details: [m091, m092])
         
         //M10
         let m101 = MissionDetail(task: "Is the Food Growth Chamber’s colors spun so the grey weight is DROPPED after green, but before tan using the Push Bar?", points: 16, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0)
