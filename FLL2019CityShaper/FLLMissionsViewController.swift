@@ -33,6 +33,7 @@ class FLLMissionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         missionModels = loadMissionModels()
+        calculateTotalScore()
         colorModels = loadColors()
         tableView.dataSource = self
         tableView.delegate = self
@@ -101,15 +102,9 @@ extension FLLMissionsViewController: FLLMissionTableViewCellDelegate {
     func calculateTotalScore() {
         totalScore = 0
         for mission in missionModels {
-            for detail in mission.details {
-                if detail.switchOn {
-                    totalScore += detail.points
-                } else if detail.stepper {
-                    totalScore += detail.points * detail.currentStepperValue
-                }
-            }
+           totalScore += mission.subTotal
         }
-        totalScore += penalty
+        
         totalScoreLabel.text = String(totalScore)
     }
 }

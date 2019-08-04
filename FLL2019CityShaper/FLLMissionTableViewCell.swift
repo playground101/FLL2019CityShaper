@@ -13,7 +13,7 @@ class FLLMissionTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
-    
+    let mission14 = [0, 5, 10, 20, 30, 45, 60]
     @IBOutlet weak var missionScoreLabel: UILabel!
     
     var mission: Mission?
@@ -37,7 +37,6 @@ class FLLMissionTableViewCell: UITableViewCell {
             dependencyOn = details[index].switchOn
             
         }
-        
         for detail in details {
             let id = detail.id
             if detail.stepper {
@@ -89,10 +88,16 @@ class FLLMissionTableViewCell: UITableViewCell {
             if detail.switchOn {
                 subTotal += detail.points
             } else if detail.stepper {
-                subTotal += detail.points * detail.currentStepperValue
+                if mission?.code == "M14" {
+                    subTotal = mission14[detail.currentStepperValue]
+                } else {
+                    subTotal += detail.points * detail.currentStepperValue
+                }
             }
+           
         }
         self.missionScoreLabel.text = String(subTotal)
+        self.mission?.subTotal = subTotal
     }
 }
 

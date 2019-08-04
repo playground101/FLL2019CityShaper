@@ -80,12 +80,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penalty: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-YI-2nB">
-                                <rect key="frame" x="16" y="30.5" width="77" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jst-me-lxq">
                                 <rect key="frame" x="0.0" y="517" width="375" height="150"/>
                                 <subviews>
@@ -108,31 +102,28 @@
                                     <constraint firstItem="FQd-bo-4p5" firstAttribute="leading" secondItem="jst-me-lxq" secondAttribute="leading" constant="16" id="y5I-gn-LCB"/>
                                 </constraints>
                             </view>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="odU-RH-0LL">
-                                <rect key="frame" x="265" y="27.5" width="94" height="29"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="penaltyHandler:" destination="RVb-4P-T9k" eventType="valueChanged" id="vQ2-g9-LJ4"/>
-                                </connections>
-                            </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-9n-JCp">
+                                <rect key="frame" x="303" y="17" width="52" height="36"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="zm0-YI-2nB" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" constant="16" id="2TV-Yd-FMX"/>
                             <constraint firstItem="Hke-zr-QTd" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" id="7Fs-da-jZz"/>
+                            <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="kmq-9n-JCp" secondAttribute="trailing" constant="20" id="BoK-lc-v41"/>
                             <constraint firstItem="jst-me-lxq" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" id="RMR-Fp-dTU"/>
-                            <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="odU-RH-0LL" secondAttribute="trailing" constant="16" id="aW6-05-FFm"/>
                             <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="Hke-zr-QTd" secondAttribute="trailing" id="bj4-OQ-Hb7"/>
                             <constraint firstItem="Hke-zr-QTd" firstAttribute="top" secondItem="XnB-Cs-pBf" secondAttribute="top" constant="45" id="cCg-RU-zUI"/>
                             <constraint firstItem="XnB-Cs-pBf" firstAttribute="bottom" secondItem="Hke-zr-QTd" secondAttribute="bottom" id="eDE-df-0w6"/>
-                            <constraint firstItem="Hke-zr-QTd" firstAttribute="top" secondItem="zm0-YI-2nB" secondAttribute="bottom" constant="12" id="krg-G2-sF6"/>
                             <constraint firstItem="XnB-Cs-pBf" firstAttribute="bottom" secondItem="jst-me-lxq" secondAttribute="bottom" id="niG-pK-BZ7"/>
                             <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="jst-me-lxq" secondAttribute="trailing" id="oAD-Al-t8n"/>
-                            <constraint firstItem="odU-RH-0LL" firstAttribute="centerY" secondItem="zm0-YI-2nB" secondAttribute="centerY" id="rP5-qn-bkH"/>
+                            <constraint firstItem="Hke-zr-QTd" firstAttribute="top" secondItem="kmq-9n-JCp" secondAttribute="bottom" constant="12" id="ru4-EY-3Lh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XnB-Cs-pBf"/>
                     </view>
                     <connections>
-                        <outlet property="penaltyLabel" destination="zm0-YI-2nB" id="zXI-UN-DIv"/>
                         <outlet property="scoreView" destination="jst-me-lxq" id="tO3-Sq-Kwe"/>
                         <outlet property="tableView" destination="Hke-zr-QTd" id="XtF-gZ-2P9"/>
                         <outlet property="totalScoreLabel" destination="uc0-rf-r81" id="Zce-J3-SGV"/>
