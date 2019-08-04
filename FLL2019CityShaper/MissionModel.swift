@@ -35,7 +35,7 @@ extension FLLMissionsViewController {
     
     func loadMissionModels() -> [Mission] {
         //Advantage
-        let m00 = MissionDetail(id: "advantage", task: "Does your Robot and Equipment fit in the Small Inspection Area?", points: 5, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: nil)
+        let m00 = MissionDetail(id: "advantage", task: "Does your Robot and Equipment fit in the Small Inspection Area?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: nil)
         let m0 = Mission(code: "Advantage", description: "", details: [m00], subTotal: 0)
         //M01
         let m011 = MissionDetail(id: "m011", task: "Is the robot supported by the bridge?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: nil)

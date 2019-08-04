@@ -79,6 +79,7 @@ extension FLLMissionsViewController: UITableViewDataSource {
         return cell!
         
     }
+
     
 }
 
@@ -106,12 +107,30 @@ extension FLLMissionsViewController: FLLMissionTableViewCellDelegate {
         }
         
     }
-    
+
     func calculateTotalScore() {
+        self.missionModels[0].subTotal = 0
+        var advantageSubTotal = 0
         totalScore = 0
+        var addAdvantagePoints = false
         for mission in missionModels {
             totalScore += mission.subTotal
+            if mission.code == "Advantage" {
+                if mission.details[0].switchOn {
+                    addAdvantagePoints = true
+                }
+            } else if mission.code != "M14" && mission.subTotal > 0 && addAdvantagePoints {
+                if mission.code == "M02" {
+                    advantageSubTotal += 10
+                } else {
+                    advantageSubTotal += 5
+                }
+            }
+            
         }
-        totalScoreLabel.text = String(totalScore)
+        totalScore += advantageSubTotal
+        self.missionModels[0].subTotal = advantageSubTotal
+      totalScoreLabel.text = String(totalScore)
     }
+    
 }

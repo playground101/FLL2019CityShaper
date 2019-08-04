@@ -83,6 +83,10 @@ class FLLMissionTableViewCell: UITableViewCell {
         guard let mission1 = mission else {
             return
         }
+        if mission?.code == "Advantage" {
+            self.missionScoreLabel.text = String(mission1.subTotal)
+            return
+        }
         var subTotal = 0
         for detail in mission1.details {
             if detail.switchOn {
