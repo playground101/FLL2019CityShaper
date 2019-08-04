@@ -103,11 +103,14 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-9n-JCp">
-                                <rect key="frame" x="303" y="17" width="52" height="36"/>
+                                <rect key="frame" x="312" y="17" width="43" height="36"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleReset:" destination="RVb-4P-T9k" eventType="touchUpInside" id="NpF-8y-7bI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

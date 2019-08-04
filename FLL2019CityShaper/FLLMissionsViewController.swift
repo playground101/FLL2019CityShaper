@@ -38,7 +38,16 @@ class FLLMissionsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+    @IBAction func handleReset(_ sender: UIButton) {
+        missionModels = loadMissionModels()
+        calculateTotalScore()
+        tableView.reloadData()
+        scrollToFirstRow()
+    }
+    func scrollToFirstRow() {
+        let indexPath = NSIndexPath(row: 0, section: 0)
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
+    }
 }
 extension FLLMissionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,7 +87,6 @@ extension FLLMissionsViewController: UITableViewDelegate {
         return self.view.frame.height
     }
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        // targetContentOffset.pointee.y = cellIndex * CGFloat(cellHeight)
         targetContentOffset.pointee.y = self.view.frame.height * round(targetContentOffset.pointee.y / self.view.frame.height)
     }
 }
@@ -102,9 +110,8 @@ extension FLLMissionsViewController: FLLMissionTableViewCellDelegate {
     func calculateTotalScore() {
         totalScore = 0
         for mission in missionModels {
-           totalScore += mission.subTotal
+            totalScore += mission.subTotal
         }
-        
         totalScoreLabel.text = String(totalScore)
     }
 }
