@@ -27,8 +27,19 @@ class FLLMissionTableViewCell: UITableViewCell {
         stackViewHeight.constant = CGFloat((count * 20 ) +  (count * 100))
         
         let details = mission.details
+        let dependencyIndex = details.firstIndex { (detail) -> Bool in
+            return detail.dependency != nil
+        }
+        var dependency: Dependency?
+        var dependencyOn = false
+        if let index = dependencyIndex {
+            dependency = details[index].dependency
+            dependencyOn = details[index].switchOn
+            
+        }
         
         for detail in details {
+            let id = detail.id
             if detail.stepper {
                 let stepperView = DetailStepperView(frame: CGRect.zero)
                 stepperView.delegate = self
@@ -36,6 +47,12 @@ class FLLMissionTableViewCell: UITableViewCell {
                 stepperView.stepper.maximumValue = Double(detail.maxStepperValue)
                 stepperView.stepper.value = Double(detail.currentStepperValue)
                 stepperView.taskLabel.text = detail.task
+                if id == dependency?.child {
+                    stepperView.isUserInteractionEnabled = false
+                    if dependencyOn {
+                        stepperView.isUserInteractionEnabled = true
+                    }
+                }
                 stackView.addArrangedSubview(stepperView)
             } else {
                 let detailView = DetailView(frame: CGRect.zero)
@@ -43,6 +60,12 @@ class FLLMissionTableViewCell: UITableViewCell {
                 detailView.taskLabel.text = detail.task
                 detailView.taskSwitch.isOn = detail.switchOn
                 self.missionScoreLabel.text = String(0)
+                if id == dependency?.child {
+                    detailView.isUserInteractionEnabled = false
+                    if dependencyOn {
+                        detailView.isUserInteractionEnabled = true
+                    }
+                }
                 stackView.addArrangedSubview(detailView)
             }
         }
@@ -102,7 +125,7 @@ extension FLLMissionTableViewCell: DetailViewDelegate {
                             switch modifiedStepperValue {
                             case 1:
                                 if stepperValue == 2 {
-                               self.mission?.details[i].currentStepperValue = 1
+                                    self.mission?.details[i].currentStepperValue = 1
                                 }
                             case 2:
                                 self.mission?.details[i].currentStepperValue = 0
@@ -115,12 +138,26 @@ extension FLLMissionTableViewCell: DetailViewDelegate {
             }
         }
     }
+    fileprivate func checkDependency(_ index: Int?, _ isOn: Bool) {
+        if let parent = self.mission?.details[index ?? 0].dependency?.parent,
+            parent == self.mission?.details[index ?? 0].id, !isOn {
+            if let child = self.mission?.details[index ?? 0].dependency?.child {
+                let childIndex =  self.mission?.details.firstIndex { (detail) -> Bool in
+                    return child == detail.id
+                }
+                resetSwitch(index: childIndex ?? 0)
+                resetStepper(index: childIndex ?? 0)
+            }
+        }
+    }
+    
     func switchTaskType(isOn: Bool, task: String?) {
         if let mission = self.mission {
             let details = mission.details
             let index = details.firstIndex { (detail) -> Bool in
                 return detail.task == task
             }
+            checkDependency(index, isOn)
             self.mission?.details[index ?? 0].switchOn = isOn
             mutuallyExclusiveTagFinder(index, isOn, isStepper: false, task)
             calculateScore(mission: self.mission)
@@ -148,7 +185,14 @@ extension FLLMissionTableViewCell: DetailStepperViewDelegate {
         }
     }
 }
-
-
+extension FLLMissionTableViewCell {
+    func resetSwitch(index: Int) {
+        self.mission?.details[index].switchOn = false
+        
+    }
+    func resetStepper(index: Int) {
+        self.mission?.details[index].currentStepperValue = 0
+    }
+}
 
 

@@ -39,7 +39,6 @@ class FLLMissionsViewController: UIViewController {
     }
     
 }
-
 extension FLLMissionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return missionModels.count
