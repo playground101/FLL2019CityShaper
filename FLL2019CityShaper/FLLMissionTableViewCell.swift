@@ -15,6 +15,7 @@ class FLLMissionTableViewCell: UITableViewCell {
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     let mission14 = [0, 5, 10, 20, 30, 45, 60]
     @IBOutlet weak var missionScoreLabel: UILabel!
+    @IBOutlet weak var missionImageView: UIImageView!
     
     var mission: Mission?
     var delegate: FLLMissionTableViewCellDelegate?
@@ -35,7 +36,6 @@ class FLLMissionTableViewCell: UITableViewCell {
         if let index = dependencyIndex {
             dependency = details[index].dependency
             dependencyOn = details[index].switchOn
-            
         }
         for detail in details {
             let id = detail.id
@@ -47,9 +47,11 @@ class FLLMissionTableViewCell: UITableViewCell {
                 stepperView.stepper.value = Double(detail.currentStepperValue)
                 stepperView.taskLabel.text = detail.task
                 if id == dependency?.child {
-                    stepperView.isUserInteractionEnabled = false
+                    stepperView.stepper.isEnabled = false
+                    stepperView.stepper.tintColor = .gray
                     if dependencyOn {
-                        stepperView.isUserInteractionEnabled = true
+                        stepperView.stepper.isEnabled = true
+                        stepperView.stepper.tintColor = .white
                     }
                 }
                 stackView.addArrangedSubview(stepperView)
@@ -60,12 +62,14 @@ class FLLMissionTableViewCell: UITableViewCell {
                 detailView.taskSwitch.isOn = detail.switchOn
                 self.missionScoreLabel.text = String(0)
                 if id == dependency?.child {
-                    detailView.isUserInteractionEnabled = false
+                    detailView.taskSwitch.isEnabled = false
                     if dependencyOn {
-                        detailView.isUserInteractionEnabled = true
+                        detailView.taskSwitch.isEnabled = true
                     }
                 }
                 stackView.addArrangedSubview(detailView)
+                dependency = detail.dependency
+                dependencyOn = detail.switchOn
             }
         }
         calculateScore(mission: mission)
@@ -148,9 +152,12 @@ extension FLLMissionTableViewCell: DetailViewDelegate {
         }
     }
     fileprivate func checkDependency(_ index: Int?, _ isOn: Bool) {
-        if let parent = self.mission?.details[index ?? 0].dependency?.parent,
-            parent == self.mission?.details[index ?? 0].id, !isOn {
-            if let child = self.mission?.details[index ?? 0].dependency?.child {
+        guard let index = index else {
+            return
+        }
+        if let parent = self.mission?.details[index].dependency?.parent,
+            parent == self.mission?.details[index].id, !isOn {
+            if let child = self.mission?.details[index].dependency?.child {
                 let childIndex =  self.mission?.details.firstIndex { (detail) -> Bool in
                     return child == detail.id
                 }

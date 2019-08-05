@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class FLLMissionsViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     
     var penalty = 0
@@ -25,8 +26,9 @@ class FLLMissionsViewController: UIViewController {
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var totalScoreLabel: UILabel!
     
-    
     var colorArray = [UIColor(red: 59/255, green: 41/255, blue: 203/255, alpha: 1).cgColor, UIColor(red: 142/255, green: 132/255, blue: 244/255, alpha: 1).cgColor]
+    
+    let imageArray = ["M0", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10", "M11", "M12", "M13", "M14"]
     
     var missionModels: [Mission] = []
     var colorModels: [ColorModel] = []
@@ -56,31 +58,25 @@ extension FLLMissionsViewController: UITableViewDataSource {
     
     func getPrimaryColor(for row: Int) -> CGColor {
         return colorModels[row % 8].colors[0]
-        
     }
     
     func getSecondaryColor(for row: Int) -> CGColor {
-        
         return colorModels[row % 8].colors[1]
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "missionCell") as? FLLMissionTableViewCell
         cell?.delegate = self
-        //  cell.configure(mission: missionModels[indexPath.row], row: indexPath.row)
         let layer = CAGradientLayer()
         layer.colors = [getPrimaryColor(for: indexPath.row), getSecondaryColor(for: indexPath.row)]
         layer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         layer.zPosition = -1
         cell?.layer.addSublayer(layer)
         cell?.configure(mission: missionModels[indexPath.row])
+        cell?.missionImageView.image = UIImage(named: imageArray[indexPath.row])
         return cell!
-        
     }
-
-    
 }
 
 extension FLLMissionsViewController: UITableViewDelegate {
@@ -105,7 +101,6 @@ extension FLLMissionsViewController: FLLMissionTableViewCellDelegate {
             tableView.reloadRows(at: [indexPath], with: .none)
             UIView.setAnimationsEnabled(true)
         }
-        
     }
 
     func calculateTotalScore() {
@@ -126,11 +121,21 @@ extension FLLMissionsViewController: FLLMissionTableViewCellDelegate {
                     advantageSubTotal += 5
                 }
             }
-            
         }
         totalScore += advantageSubTotal
         self.missionModels[0].subTotal = advantageSubTotal
-      totalScoreLabel.text = String(totalScore)
+        totalScoreLabel.text = String(totalScore)
     }
-    
+}
+
+extension UIImage {
+    func grayscaleImage() -> UIImage? {
+        let ciImage = CIImage(image: self)
+        if let grayscale = ciImage?.applyingFilter("CIColorControls",
+                                                   parameters: [ kCIInputSaturationKey: 0.0 ]) {
+            return UIImage(ciImage: grayscale)
+        } else {
+            return nil
+        }
+    }
 }

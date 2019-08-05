@@ -30,6 +30,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="573.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c2D-uK-Qki">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="573.5"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-Ck-HuA">
                                                     <rect key="frame" x="31" y="51" width="84" height="45"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="34"/>
@@ -61,11 +64,15 @@
                                                 <constraint firstItem="q9M-Zh-2A8" firstAttribute="leading" secondItem="VR3-Ck-HuA" secondAttribute="trailing" constant="26" id="LwM-wR-qFC"/>
                                                 <constraint firstItem="835-Pw-cNk" firstAttribute="leading" secondItem="AeZ-qA-zSb" secondAttribute="leadingMargin" constant="16" id="PgK-bG-WJ9"/>
                                                 <constraint firstItem="q9M-Zh-2A8" firstAttribute="top" secondItem="AeZ-qA-zSb" secondAttribute="topMargin" constant="20" id="Pyz-NW-PhR"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="height" secondItem="AeZ-qA-zSb" secondAttribute="height" id="TQf-8v-gwz"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="width" secondItem="AeZ-qA-zSb" secondAttribute="width" id="UGY-Xw-ygR"/>
                                                 <constraint firstItem="835-Pw-cNk" firstAttribute="top" secondItem="AeZ-qA-zSb" secondAttribute="top" constant="120" id="Wgk-kK-hPZ"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="q9M-Zh-2A8" secondAttribute="trailing" constant="20" id="Y1i-CL-VZd"/>
                                                 <constraint firstItem="q9M-Zh-2A8" firstAttribute="centerY" secondItem="VR3-Ck-HuA" secondAttribute="centerY" id="dPr-bP-lb7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="835-Pw-cNk" secondAttribute="trailing" constant="16" id="igj-Sp-i2k"/>
                                                 <constraint firstItem="wNy-Mg-H9h" firstAttribute="top" secondItem="835-Pw-cNk" secondAttribute="bottom" constant="20" id="qz1-rW-fBz"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="centerY" secondItem="AeZ-qA-zSb" secondAttribute="centerY" id="rN6-G2-cGY"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="centerX" secondItem="AeZ-qA-zSb" secondAttribute="centerX" id="vUL-H3-Z8v"/>
                                                 <constraint firstItem="VR3-Ck-HuA" firstAttribute="top" secondItem="AeZ-qA-zSb" secondAttribute="topMargin" constant="40" id="y7U-ce-Ew7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -73,6 +80,7 @@
                                         <connections>
                                             <outlet property="codeLabel" destination="VR3-Ck-HuA" id="Le3-3Y-Fs8"/>
                                             <outlet property="descriptionLabel" destination="q9M-Zh-2A8" id="qxw-Ez-iog"/>
+                                            <outlet property="missionImageView" destination="c2D-uK-Qki" id="AbD-gZ-o2r"/>
                                             <outlet property="missionScoreLabel" destination="wNy-Mg-H9h" id="WVd-Gs-U1H"/>
                                             <outlet property="stackView" destination="835-Pw-cNk" id="y2Q-UH-Khs"/>
                                             <outlet property="stackViewHeight" destination="sA3-ph-sYT" id="kJu-gX-mcG"/>
@@ -102,7 +110,7 @@
                                     <constraint firstItem="FQd-bo-4p5" firstAttribute="leading" secondItem="jst-me-lxq" secondAttribute="leading" constant="16" id="y5I-gn-LCB"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START OVER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-aP-CjZ">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START OVER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-aP-CjZ">
                                 <rect key="frame" x="10" y="467" width="14" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">

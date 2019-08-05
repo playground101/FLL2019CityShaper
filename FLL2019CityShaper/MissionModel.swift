@@ -43,7 +43,7 @@ extension FLLMissionsViewController {
         let m01 = Mission(code: "M01", description: "Elevated Places", details: [m011, m012], subTotal: 0)
         
         //M02
-        let m021 = MissionDetail(id: "m021", task: "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: nil)
+        let m021 = MissionDetail(id: "m021", task: "Is the Hooked Blue Unit clearly lowered any distance from the Guide Hole?", points: 20, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: Dependency(parent: "m021", child: "m022"))
         let m022 = MissionDetail(id: "m022", task: "Is the Hooked Blue Unit Independent and Supported by another Blue Unit?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0, dependency: Dependency(parent: "m022", child: "m023"))
         let m023 = MissionDetail(id: "m023", task: "AND is Level 1 Completely in the Blue Circle?", points: 15, switchOn: false, tag: 2, stepper: false, maxStepperValue: 0, currentStepperValue:0, dependency: Dependency(parent: "m022", child: "m023"))
         let m02 = Mission(code: "M02", description: "Crane", details: [m021, m022, m023], subTotal: 0)
