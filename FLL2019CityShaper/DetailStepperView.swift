@@ -23,8 +23,6 @@ class DetailStepperView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       // stepper.minimumValue = 0
-       // stepper.maximumValue = 3
         loadNibView()
     }
     

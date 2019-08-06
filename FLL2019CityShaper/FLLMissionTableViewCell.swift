@@ -28,17 +28,7 @@ class FLLMissionTableViewCell: UITableViewCell {
         stackViewHeight.constant = CGFloat((count * 20 ) +  (count * 100))
         
         let details = mission.details
-        let dependencyIndex = details.firstIndex { (detail) -> Bool in
-            return detail.dependency != nil
-        }
-        var dependency: Dependency?
-        var dependencyOn = false
-        if let index = dependencyIndex {
-            dependency = details[index].dependency
-            dependencyOn = details[index].switchOn
-        }
         for detail in details {
-            let id = detail.id
             if detail.stepper {
                 let stepperView = DetailStepperView(frame: CGRect.zero)
                 stepperView.delegate = self
@@ -46,13 +36,12 @@ class FLLMissionTableViewCell: UITableViewCell {
                 stepperView.stepper.maximumValue = Double(detail.maxStepperValue)
                 stepperView.stepper.value = Double(detail.currentStepperValue)
                 stepperView.taskLabel.text = detail.task
-                if id == dependency?.child {
+                if detail.isEnabled {
+                    stepperView.stepper.isEnabled = true
+                    stepperView.stepper.tintColor = .white
+                } else {
                     stepperView.stepper.isEnabled = false
                     stepperView.stepper.tintColor = .gray
-                    if dependencyOn {
-                        stepperView.stepper.isEnabled = true
-                        stepperView.stepper.tintColor = .white
-                    }
                 }
                 stackView.addArrangedSubview(stepperView)
             } else {
@@ -61,15 +50,12 @@ class FLLMissionTableViewCell: UITableViewCell {
                 detailView.taskLabel.text = detail.task
                 detailView.taskSwitch.isOn = detail.switchOn
                 self.missionScoreLabel.text = String(0)
-                if id == dependency?.child {
+                if detail.isEnabled {
+                    detailView.taskSwitch.isEnabled = true
+                } else {
                     detailView.taskSwitch.isEnabled = false
-                    if dependencyOn {
-                        detailView.taskSwitch.isEnabled = true
-                    }
                 }
                 stackView.addArrangedSubview(detailView)
-                dependency = detail.dependency
-                dependencyOn = detail.switchOn
             }
         }
         calculateScore(mission: mission)
@@ -102,7 +88,7 @@ class FLLMissionTableViewCell: UITableViewCell {
                     subTotal += detail.points * detail.currentStepperValue
                 }
             }
-           
+            
         }
         self.missionScoreLabel.text = String(subTotal)
         self.mission?.subTotal = subTotal
@@ -151,18 +137,26 @@ extension FLLMissionTableViewCell: DetailViewDelegate {
             }
         }
     }
+    
     fileprivate func checkDependency(_ index: Int?, _ isOn: Bool) {
         guard let index = index else {
             return
         }
-        if let parent = self.mission?.details[index].dependency?.parent,
-            parent == self.mission?.details[index].id, !isOn {
-            if let child = self.mission?.details[index].dependency?.child {
-                let childIndex =  self.mission?.details.firstIndex { (detail) -> Bool in
-                    return child == detail.id
+        guard let children = self.mission?.details[index].children else {
+            return
+        }
+        for child in children {
+            let childIndex =  self.mission?.details.firstIndex { (detail) -> Bool in
+                return child == detail.id
+            }
+            if let childIndex = childIndex {
+                if isOn {
+                    self.mission?.details[childIndex].isEnabled = true
+                } else {
+                    self.mission?.details[childIndex].isEnabled = false
+                    resetSwitch(index: childIndex)
+                    resetStepper(index: childIndex)
                 }
-                resetSwitch(index: childIndex ?? 0)
-                resetStepper(index: childIndex ?? 0)
             }
         }
     }

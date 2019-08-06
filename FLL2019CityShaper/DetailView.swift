@@ -31,8 +31,6 @@ class DetailView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        
     }
     
     fileprivate func loadNibView() {
@@ -40,7 +38,6 @@ class DetailView: UIView {
         if let detailView = detailNib.instantiate(withOwner: self, options: nil).first as? UIView {
             self.addSubview(detailView)
         }
-        
     }
 }
 
