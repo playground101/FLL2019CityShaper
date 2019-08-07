@@ -9,16 +9,19 @@
 import UIKit
 
 class FLLMissionTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
-    let mission14 = [0, 5, 10, 20, 30, 45, 60]
+    
     @IBOutlet weak var missionScoreLabel: UILabel!
     @IBOutlet weak var missionImageView: UIImageView!
     
     var mission: Mission?
     var delegate: FLLMissionTableViewCellDelegate?
+    
+    let mission14 = [0, 5, 10, 20, 30, 45, 60]
     
     func configure(mission: Mission)  {
         self.mission = mission
@@ -88,7 +91,6 @@ class FLLMissionTableViewCell: UITableViewCell {
                     subTotal += detail.points * detail.currentStepperValue
                 }
             }
-            
         }
         self.missionScoreLabel.text = String(subTotal)
         self.mission?.subTotal = subTotal
@@ -198,7 +200,6 @@ extension FLLMissionTableViewCell: DetailStepperViewDelegate {
 extension FLLMissionTableViewCell {
     func resetSwitch(index: Int) {
         self.mission?.details[index].switchOn = false
-        
     }
     func resetStepper(index: Int) {
         self.mission?.details[index].currentStepperValue = 0
