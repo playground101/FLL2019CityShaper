@@ -82,7 +82,7 @@ extension FLLMissionsViewController {
         let m10 = Mission(code: "M10", description: "Steel Construction", details: [m101], subTotal: 0)
         
         //M11
-        let m111 = MissionDetail(id: "m111", task: "Is the Structure bigger than a Blue Building Unit and built from the team’s white LEGO bricks?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, children: ["m112", "m113"], isEnabled: true)
+        let m111 = MissionDetail(id: "m111", task: "Is the Structure longer than a four-stud LEGO elment and built from the team’s white LEGO bricks?", points: 0, switchOn: false, tag: 0, stepper: false, maxStepperValue: 0, currentStepperValue: 0, children: ["m112", "m113"], isEnabled: true)
         let m112 = MissionDetail(id: "m112", task: "Is the Structure partly in any circle?", points: 10, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0, children: nil, isEnabled: false)
         let m113 = MissionDetail(id: "m113", task: "Is the Structure completely in any circle?", points: 15, switchOn: false, tag: 1, stepper: false, maxStepperValue: 0, currentStepperValue: 0, children: nil, isEnabled: false)
         let m11 = Mission(code: "M11", description: "Innovative Architecture", details: [m111, m112, m113], subTotal: 0)
