@@ -89,8 +89,8 @@ extension FLLMissionsViewController {
         
         //M12
         let m121 = MissionDetail(id: "m121", task: "Number of Circles with a color-matching Unit, flat down on the Mat, and Completely in Circle:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 3, currentStepperValue: 1, children: nil, isEnabled: true)
-        let m122 = MissionDetail(id: "m122", task: "Sum of height Levels of Independent Stacks at least partly in any Circle:", points: 5, switchOn: false, tag: 1, stepper: true, maxStepperValue: 4, currentStepperValue: 0, children: nil, isEnabled: true)
-        let m12 = Mission(code: "M12", description: "Design and Build", details: [m121, m122], subTotal: 0)
+        let m122 = MissionDetail(id: "m122", task: "Sum of height Levels of Independent Stacks at least partly in any Circle:", points: 5, switchOn: false, tag: 1, stepper: true, maxStepperValue: 28, currentStepperValue: 0, children: nil, isEnabled: true)
+        let m12 = Mission(code: "M12", description: "Design and Build", details: [m121, m122], subTotal: 15)
        
         //M13
         let m131 = MissionDetail(id: "m131", task: "Number of Upgrades that are Independent and Supported only by a Stack which is at least partly in a Circle:", points: 10, switchOn: false, tag: 0, stepper: true, maxStepperValue: 3, currentStepperValue: 0, children: nil, isEnabled: true)
