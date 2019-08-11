@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0474D51322F4FF0F00505B20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474D51222F4FF0F00505B20 /* AppDelegate.swift */; };
 		0474D51D22F4FF1100505B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474D51B22F4FF1100505B20 /* LaunchScreen.storyboard */; };
-		04D3E42922F7BE28007E6726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E42822F7BE28007E6726 /* Assets.xcassets */; };
+		04D3E42D22FBDC62007E6726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E42C22FBDC62007E6726 /* Assets.xcassets */; };
 		B22AE34E22F5029400F18804 /* FLLMissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22AE34522F5029300F18804 /* FLLMissionTableViewCell.swift */; };
 		B22AE34F22F5029400F18804 /* FLLMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22AE34622F5029300F18804 /* FLLMissions.storyboard */; };
 		B22AE35022F5029400F18804 /* DetailStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22AE34722F5029300F18804 /* DetailStepperView.xib */; };
@@ -26,7 +26,7 @@
 		0474D51222F4FF0F00505B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0474D51C22F4FF1100505B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0474D51E22F4FF1100505B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04D3E42822F7BE28007E6726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04D3E42C22FBDC62007E6726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B22AE34522F5029300F18804 /* FLLMissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLLMissionTableViewCell.swift; sourceTree = "<group>"; };
 		B22AE34622F5029300F18804 /* FLLMissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FLLMissions.storyboard; sourceTree = "<group>"; };
 		B22AE34722F5029300F18804 /* DetailStepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailStepperView.xib; sourceTree = "<group>"; };
@@ -75,11 +75,11 @@
 				B22AE34922F5029300F18804 /* DetailView.xib */,
 				B22AE34622F5029300F18804 /* FLLMissions.storyboard */,
 				B22AE34D22F5029400F18804 /* FLLMissionsViewController.swift */,
+				04D3E42C22FBDC62007E6726 /* Assets.xcassets */,
 				B22AE34B22F5029400F18804 /* MissionModel.swift */,
 				B22AE34522F5029300F18804 /* FLLMissionTableViewCell.swift */,
 				0474D51222F4FF0F00505B20 /* AppDelegate.swift */,
 				0474D51B22F4FF1100505B20 /* LaunchScreen.storyboard */,
-				04D3E42822F7BE28007E6726 /* Assets.xcassets */,
 				0474D51E22F4FF1100505B20 /* Info.plist */,
 			);
 			path = FLL2019CityShaper;
@@ -144,10 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22AE34F22F5029400F18804 /* FLLMissions.storyboard in Resources */,
+				04D3E42D22FBDC62007E6726 /* Assets.xcassets in Resources */,
 				B22AE35022F5029400F18804 /* DetailStepperView.xib in Resources */,
 				0474D51D22F4FF1100505B20 /* LaunchScreen.storyboard in Resources */,
 				B22AE35222F5029400F18804 /* DetailView.xib in Resources */,
-				04D3E42922F7BE28007E6726 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
