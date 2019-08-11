@@ -13,14 +13,7 @@ class FLLMissionsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var penalty = 0
     var totalScore = 0
-    
-    @IBAction func penaltyHandler(_ sender: UIStepper) {
-        penalty = Int(sender.value * -5)
-        calculateTotalScore()
-        penaltyLabel.text = "Penalty: \(String(Int(sender.value)))"
-    }
     
     @IBOutlet weak var penaltyLabel: UILabel!
     @IBOutlet weak var scoreView: UIView!
