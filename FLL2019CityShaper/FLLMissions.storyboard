@@ -111,7 +111,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTART" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-aP-CjZ">
-                                <rect key="frame" x="10" y="467" width="14" height="200"/>
+                                <rect key="frame" x="20" y="467" width="14" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" staticText="YES"/>
@@ -121,11 +121,11 @@
                                     <constraint firstAttribute="height" constant="200" id="Ool-V6-1eY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                <color key="textColor" red="0.2834542411" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-9n-JCp">
-                                <rect key="frame" x="0.0" y="467" width="40" height="200"/>
+                                <rect key="frame" x="20" y="467" width="40" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="8k9-MW-w2H"/>
@@ -143,15 +143,15 @@
                         <constraints>
                             <constraint firstItem="kmq-9n-JCp" firstAttribute="bottom" secondItem="XnB-Cs-pBf" secondAttribute="bottom" id="51s-eC-Yz0"/>
                             <constraint firstItem="Hke-zr-QTd" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" id="7Fs-da-jZz"/>
-                            <constraint firstItem="e0I-aP-CjZ" firstAttribute="bottom" secondItem="XnB-Cs-pBf" secondAttribute="bottom" id="L4I-pd-EDn"/>
+                            <constraint firstItem="e0I-aP-CjZ" firstAttribute="bottom" secondItem="1rh-ll-dym" secondAttribute="bottom" id="L4I-pd-EDn"/>
                             <constraint firstItem="jst-me-lxq" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" id="RMR-Fp-dTU"/>
-                            <constraint firstItem="kmq-9n-JCp" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" id="U9g-Os-whD"/>
+                            <constraint firstItem="kmq-9n-JCp" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" constant="20" id="U9g-Os-whD"/>
                             <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="Hke-zr-QTd" secondAttribute="trailing" id="bj4-OQ-Hb7"/>
                             <constraint firstItem="Hke-zr-QTd" firstAttribute="top" secondItem="1rh-ll-dym" secondAttribute="top" id="cCg-RU-zUI"/>
-                            <constraint firstItem="XnB-Cs-pBf" firstAttribute="bottom" secondItem="Hke-zr-QTd" secondAttribute="bottom" id="eDE-df-0w6"/>
-                            <constraint firstItem="XnB-Cs-pBf" firstAttribute="bottom" secondItem="jst-me-lxq" secondAttribute="bottom" id="niG-pK-BZ7"/>
+                            <constraint firstAttribute="bottom" secondItem="Hke-zr-QTd" secondAttribute="bottom" id="eDE-df-0w6"/>
+                            <constraint firstAttribute="bottom" secondItem="jst-me-lxq" secondAttribute="bottom" id="niG-pK-BZ7"/>
                             <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="jst-me-lxq" secondAttribute="trailing" id="oAD-Al-t8n"/>
-                            <constraint firstItem="e0I-aP-CjZ" firstAttribute="leading" secondItem="1rh-ll-dym" secondAttribute="leading" constant="10" id="tMH-wO-63u"/>
+                            <constraint firstItem="e0I-aP-CjZ" firstAttribute="leading" secondItem="1rh-ll-dym" secondAttribute="leading" constant="20" id="tMH-wO-63u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XnB-Cs-pBf"/>
                     </view>
