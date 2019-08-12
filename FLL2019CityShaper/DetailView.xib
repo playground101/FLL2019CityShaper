@@ -10,9 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailView" customModule="FLLScoreSheet" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailView" customModule="FLL2019CityShaper" customModuleProvider="target">
             <connections>
                 <outlet property="taskLabel" destination="dNH-cj-UG7" id="aGa-Vd-ZZz"/>
+                <outlet property="taskLabelWidth" destination="1FW-o1-kwd" id="gPr-gZ-ON2"/>
                 <outlet property="taskSwitch" destination="iP2-pW-mGY" id="76x-bP-nOX"/>
             </connections>
         </placeholder>

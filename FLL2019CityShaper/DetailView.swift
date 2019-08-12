@@ -16,6 +16,8 @@ class DetailView: UIView {
     
     @IBOutlet weak var taskSwitch: UISwitch!
     
+    @IBOutlet weak var taskLabelWidth: NSLayoutConstraint!
+    
     @IBAction func scoreCalc(_ sender: UISwitch) {
         if sender.isOn {
             delegate?.taskComplete(task: taskLabel.text)

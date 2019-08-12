@@ -11,6 +11,7 @@ import UIKit
 
 class DetailStepperView: UIView {
     
+    @IBOutlet weak var taskLabelWidth: NSLayoutConstraint!
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     weak var delegate: DetailStepperViewDelegate?

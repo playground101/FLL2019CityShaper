@@ -15,6 +15,7 @@
                 <outlet property="stepper" destination="vke-dd-uqA" id="OBh-fm-pxM"/>
                 <outlet property="stepperLabel" destination="gGI-1E-4Ae" id="dAV-pd-8Sc"/>
                 <outlet property="taskLabel" destination="f3a-8f-jpd" id="TDJ-v2-moe"/>
+                <outlet property="taskLabelWidth" destination="mDK-ip-G2B" id="2bY-5W-bzm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

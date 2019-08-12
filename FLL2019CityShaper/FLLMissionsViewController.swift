@@ -34,10 +34,17 @@ class FLLMissionsViewController: UIViewController {
         tableView.delegate = self
     }
     @IBAction func handleReset(_ sender: UIButton) {
-        missionModels = loadMissionModels()
-        calculateTotalScore()
-        tableView.reloadData()
-        scrollToFirstRow()
+        
+        let alert = UIAlertController(title: "Restart Scoring?", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            self.missionModels = self.loadMissionModels()
+            self.calculateTotalScore()
+            self.tableView.reloadData()
+            self.scrollToFirstRow()
+            
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     func scrollToFirstRow() {
         let indexPath = NSIndexPath(row: 0, section: 0)

@@ -20,6 +20,7 @@ class FLLMissionTableViewCell: UITableViewCell {
     
     var mission: Mission?
     var delegate: FLLMissionTableViewCellDelegate?
+    var isIPhone5s = false
     
     let mission14 = [0, 5, 10, 20, 30, 45, 60]
     
@@ -28,7 +29,12 @@ class FLLMissionTableViewCell: UITableViewCell {
         codeLabel.text = mission.code
         descriptionLabel.text = mission.description
         let count = mission.details.count
-        stackViewHeight.constant = CGFloat((count * 20 ) +  (count * 100))
+        if UIScreen.main.bounds.height < 600 {
+            isIPhone5s = true
+            stackViewHeight.constant = CGFloat((count * 20 ) +  (count * 80))
+        } else {
+            stackViewHeight.constant = CGFloat((count * 20 ) +  (count * 100))
+        }
         
         let details = mission.details
         for detail in details {
@@ -39,6 +45,10 @@ class FLLMissionTableViewCell: UITableViewCell {
                 stepperView.stepper.maximumValue = Double(detail.maxStepperValue)
                 stepperView.stepper.value = Double(detail.currentStepperValue)
                 stepperView.taskLabel.text = detail.task
+                if isIPhone5s {
+                    stepperView.taskLabelWidth.constant = stackView.frame.width/1.75
+                    stepperView.taskLabel.font = UIFont(name: "Futura-Medium", size: 14.0)
+                }
                 if detail.isEnabled {
                     stepperView.stepper.isEnabled = true
                     stepperView.stepper.tintColor = .white
@@ -52,6 +62,11 @@ class FLLMissionTableViewCell: UITableViewCell {
                 detailView.delegate = self
                 detailView.taskLabel.text = detail.task
                 detailView.taskSwitch.isOn = detail.switchOn
+                if isIPhone5s {
+                    detailView.taskLabelWidth.constant = stackView.frame.width/1.5
+                    detailView.taskLabel.font = UIFont(name: "Futura-Medium", size: 14.0)
+                    detailView.taskLabel.sizeToFit()
+                }
                 self.missionScoreLabel.text = String(0)
                 if detail.isEnabled {
                     detailView.taskSwitch.isEnabled = true
@@ -59,6 +74,7 @@ class FLLMissionTableViewCell: UITableViewCell {
                     detailView.taskSwitch.isEnabled = false
                 }
                 stackView.addArrangedSubview(detailView)
+                stackView.layoutIfNeeded()
             }
         }
         calculateScore(mission: mission)
@@ -102,6 +118,7 @@ extension FLLMissionTableViewCell: DetailViewDelegate {
     func taskComplete(task: String?) {
         switchTaskType(isOn: true, task: task)
     }
+    
     func taskIncomplete(task: String?) {
         switchTaskType(isOn: false, task: task)
     }
@@ -197,6 +214,7 @@ extension FLLMissionTableViewCell: DetailStepperViewDelegate {
         }
     }
 }
+
 extension FLLMissionTableViewCell {
     func resetSwitch(index: Int) {
         self.mission?.details[index].switchOn = false
@@ -205,5 +223,3 @@ extension FLLMissionTableViewCell {
         self.mission?.details[index].currentStepperValue = 0
     }
 }
-
-
