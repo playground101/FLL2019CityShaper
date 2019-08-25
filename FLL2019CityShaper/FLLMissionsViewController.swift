@@ -33,6 +33,13 @@ class FLLMissionsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    
     @IBAction func handleReset(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "Restart Scoring?", message: "", preferredStyle: .alert)
@@ -89,6 +96,10 @@ extension FLLMissionsViewController: UITableViewDelegate {
 }
 
 extension FLLMissionsViewController: FLLMissionTableViewCellDelegate {
+    func shouldGoToMainViewController() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func didUpdateMission(mission: Mission) {
         let index = missionModels.firstIndex { (originalMission) -> Bool in
             return mission.code == originalMission.code

@@ -24,6 +24,10 @@ class FLLMissionTableViewCell: UITableViewCell {
     
     let mission14 = [0, 5, 10, 20, 30, 45, 60]
     
+    @IBAction func handleBackButton(_ sender: Any) {
+        delegate?.shouldGoToMainViewController()
+    }
+    
     func configure(mission: Mission)  {
         self.mission = mission
         codeLabel.text = mission.code
@@ -198,7 +202,8 @@ extension FLLMissionTableViewCell: DetailViewDelegate {
 }
 
 protocol FLLMissionTableViewCellDelegate: class {
-    func didUpdateMission(mission: Mission) 
+    func didUpdateMission(mission: Mission)
+    func shouldGoToMainViewController()
 }
 
 extension FLLMissionTableViewCell: DetailStepperViewDelegate {
