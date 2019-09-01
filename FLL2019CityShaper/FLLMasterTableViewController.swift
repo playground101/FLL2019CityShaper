@@ -35,6 +35,7 @@ class FLLMasterTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "masterCell", for: indexPath)
         cell.textLabel?.font = UIFont(name: "Futura", size: 20)
+        
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Scorer"
@@ -54,6 +55,7 @@ class FLLMasterTableViewController: UITableViewController {
         
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "FLLMissions", bundle: nil)
         switch indexPath.row {

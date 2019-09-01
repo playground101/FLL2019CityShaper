@@ -21,7 +21,7 @@ class FLLLinksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string: "https://www.firstinspires.org")
+        let myURL = URL(string: "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         webView.allowsBackForwardNavigationGestures = true
