@@ -1,0 +1,39 @@
+//
+//  FLLLinksViewController.swift
+//  FLL2019CityShaper
+//
+//  Created by user141824 on 8/25/19.
+//  Copyright © 2019 Playground. All rights reserved.
+//
+
+import UIKit
+import WebKit
+class FLLLinksViewController: UIViewController {
+
+    var webView: WKWebView!
+    override func  loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self as? WKUIDelegate
+        view = webView
+    }
+  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let myURL = URL(string: "https://www.firstinspires.org")
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
+        webView.allowsBackForwardNavigationGestures = true
+        
+
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func handleBackButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+
+}

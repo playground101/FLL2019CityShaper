@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7bQ-aQ-svF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="LCI-56-ugD">
+            <objects>
+                <viewController id="b9l-dL-2DP" customClass="FLLTimerViewController" customModule="FLL2019CityShaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bks-4W-ynM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sev-ed-aly">
+                                <rect key="frame" x="318" y="83" width="41" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="handleBackButton:" destination="b9l-dL-2DP" eventType="touchUpInside" id="psA-da-dYL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1vg-h9-BbS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lHm-Fv-NFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773.5999999999999" y="-448.42578710644682"/>
+        </scene>
+        <!--Missions View Controller-->
+        <scene sceneID="nwb-tr-WEO">
+            <objects>
+                <viewController id="RVb-4P-T9k" customClass="FLLMissionsViewController" customModule="FLL2019CityShaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1rh-ll-dym">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hke-zr-QTd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="missionCell" rowHeight="574" id="fay-MZ-ASa" customClass="FLLMissionTableViewCell" customModule="FLL2019CityShaper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="574"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fay-MZ-ASa" id="AeZ-qA-zSb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="573.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c2D-uK-Qki">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="573.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-Ck-HuA">
+                                                    <rect key="frame" x="31" y="51" width="84" height="45"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="34"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="q9M-Zh-2A8">
+                                                    <rect key="frame" x="141" y="31" width="147.5" height="85"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNy-Mg-H9h">
+                                                    <rect key="frame" x="257" y="340" width="87" height="39"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="835-Pw-cNk">
+                                                    <rect key="frame" x="31" y="120" width="313" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="sA3-ph-sYT"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYV-ja-1HI">
+                                                    <rect key="frame" x="329" y="58.5" width="41" height="30"/>
+                                                    <state key="normal" title="Home">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="handleBackButton:" destination="fay-MZ-ASa" eventType="touchUpInside" id="GMY-Pj-2zS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qYV-ja-1HI" firstAttribute="centerY" secondItem="q9M-Zh-2A8" secondAttribute="centerY" id="7xm-yV-oTQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wNy-Mg-H9h" secondAttribute="trailing" constant="16" id="FTQ-ye-FPV"/>
+                                                <constraint firstItem="VR3-Ck-HuA" firstAttribute="leading" secondItem="AeZ-qA-zSb" secondAttribute="leadingMargin" constant="16" id="H5Z-a5-pk9"/>
+                                                <constraint firstItem="qYV-ja-1HI" firstAttribute="centerY" secondItem="q9M-Zh-2A8" secondAttribute="centerY" id="IQi-9f-6fy"/>
+                                                <constraint firstItem="q9M-Zh-2A8" firstAttribute="leading" secondItem="VR3-Ck-HuA" secondAttribute="trailing" constant="26" id="LwM-wR-qFC"/>
+                                                <constraint firstItem="835-Pw-cNk" firstAttribute="leading" secondItem="AeZ-qA-zSb" secondAttribute="leadingMargin" constant="16" id="PgK-bG-WJ9"/>
+                                                <constraint firstItem="q9M-Zh-2A8" firstAttribute="top" secondItem="AeZ-qA-zSb" secondAttribute="topMargin" constant="20" id="Pyz-NW-PhR"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="height" secondItem="AeZ-qA-zSb" secondAttribute="height" id="TQf-8v-gwz"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="width" secondItem="AeZ-qA-zSb" secondAttribute="width" id="UGY-Xw-ygR"/>
+                                                <constraint firstItem="835-Pw-cNk" firstAttribute="top" secondItem="AeZ-qA-zSb" secondAttribute="top" constant="120" id="Wgk-kK-hPZ"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="q9M-Zh-2A8" secondAttribute="trailing" constant="20" id="Y1i-CL-VZd"/>
+                                                <constraint firstItem="qYV-ja-1HI" firstAttribute="trailing" secondItem="AeZ-qA-zSb" secondAttribute="trailingMargin" constant="10" id="bIx-oV-vlX"/>
+                                                <constraint firstItem="q9M-Zh-2A8" firstAttribute="centerY" secondItem="VR3-Ck-HuA" secondAttribute="centerY" id="dPr-bP-lb7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="835-Pw-cNk" secondAttribute="trailing" constant="16" id="igj-Sp-i2k"/>
+                                                <constraint firstItem="wNy-Mg-H9h" firstAttribute="top" secondItem="835-Pw-cNk" secondAttribute="bottom" constant="20" id="qz1-rW-fBz"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="centerY" secondItem="AeZ-qA-zSb" secondAttribute="centerY" id="rN6-G2-cGY"/>
+                                                <constraint firstItem="c2D-uK-Qki" firstAttribute="centerX" secondItem="AeZ-qA-zSb" secondAttribute="centerX" id="vUL-H3-Z8v"/>
+                                                <constraint firstItem="VR3-Ck-HuA" firstAttribute="top" secondItem="AeZ-qA-zSb" secondAttribute="topMargin" constant="40" id="y7U-ce-Ew7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.23137254901960785" green="0.16078431372549018" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="codeLabel" destination="VR3-Ck-HuA" id="Le3-3Y-Fs8"/>
+                                            <outlet property="descriptionLabel" destination="q9M-Zh-2A8" id="qxw-Ez-iog"/>
+                                            <outlet property="missionImageView" destination="c2D-uK-Qki" id="AbD-gZ-o2r"/>
+                                            <outlet property="missionScoreLabel" destination="wNy-Mg-H9h" id="WVd-Gs-U1H"/>
+                                            <outlet property="stackView" destination="835-Pw-cNk" id="y2Q-UH-Khs"/>
+                                            <outlet property="stackViewHeight" destination="sA3-ph-sYT" id="kJu-gX-mcG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jst-me-lxq">
+                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="semicircle" translatesAutoresizingMaskIntoConstraints="NO" id="FQd-bo-4p5">
+                                        <rect key="frame" x="16" y="24" width="343" height="126"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc0-rf-r81">
+                                        <rect key="frame" x="172" y="72.5" width="31" height="65"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FQd-bo-4p5" secondAttribute="bottom" id="8Cd-vO-dBc"/>
+                                    <constraint firstAttribute="height" constant="150" id="TmH-6b-800"/>
+                                    <constraint firstAttribute="trailing" secondItem="FQd-bo-4p5" secondAttribute="trailing" constant="16" id="V1G-Gm-xRz"/>
+                                    <constraint firstItem="uc0-rf-r81" firstAttribute="centerX" secondItem="jst-me-lxq" secondAttribute="centerX" id="d8p-Me-LSW"/>
+                                    <constraint firstItem="uc0-rf-r81" firstAttribute="centerY" secondItem="jst-me-lxq" secondAttribute="centerY" constant="30" id="gVd-HP-a14"/>
+                                    <constraint firstItem="FQd-bo-4p5" firstAttribute="leading" secondItem="jst-me-lxq" secondAttribute="leading" constant="16" id="y5I-gn-LCB"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTART" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-aP-CjZ">
+                                <rect key="frame" x="20" y="467" width="14" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="14" id="CyE-PS-Kqa"/>
+                                    <constraint firstAttribute="height" constant="200" id="Ool-V6-1eY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-9n-JCp">
+                                <rect key="frame" x="20" y="467" width="40" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="8k9-MW-w2H"/>
+                                    <constraint firstAttribute="width" constant="40" id="LYa-eF-ZtI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleReset:" destination="RVb-4P-T9k" eventType="touchUpInside" id="NpF-8y-7bI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kmq-9n-JCp" firstAttribute="bottom" secondItem="XnB-Cs-pBf" secondAttribute="bottom" id="51s-eC-Yz0"/>
+                            <constraint firstItem="Hke-zr-QTd" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" id="7Fs-da-jZz"/>
+                            <constraint firstItem="e0I-aP-CjZ" firstAttribute="bottom" secondItem="1rh-ll-dym" secondAttribute="bottom" id="L4I-pd-EDn"/>
+                            <constraint firstItem="jst-me-lxq" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" id="RMR-Fp-dTU"/>
+                            <constraint firstItem="kmq-9n-JCp" firstAttribute="leading" secondItem="XnB-Cs-pBf" secondAttribute="leading" constant="20" id="U9g-Os-whD"/>
+                            <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="Hke-zr-QTd" secondAttribute="trailing" id="bj4-OQ-Hb7"/>
+                            <constraint firstItem="Hke-zr-QTd" firstAttribute="top" secondItem="1rh-ll-dym" secondAttribute="top" id="cCg-RU-zUI"/>
+                            <constraint firstAttribute="bottom" secondItem="Hke-zr-QTd" secondAttribute="bottom" id="eDE-df-0w6"/>
+                            <constraint firstAttribute="bottom" secondItem="jst-me-lxq" secondAttribute="bottom" id="niG-pK-BZ7"/>
+                            <constraint firstItem="XnB-Cs-pBf" firstAttribute="trailing" secondItem="jst-me-lxq" secondAttribute="trailing" id="oAD-Al-t8n"/>
+                            <constraint firstItem="e0I-aP-CjZ" firstAttribute="leading" secondItem="1rh-ll-dym" secondAttribute="leading" constant="20" id="tMH-wO-63u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XnB-Cs-pBf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NNb-4o-ZnY"/>
+                    <connections>
+                        <outlet property="scoreView" destination="jst-me-lxq" id="tO3-Sq-Kwe"/>
+                        <outlet property="tableView" destination="Hke-zr-QTd" id="XtF-gZ-2P9"/>
+                        <outlet property="totalScoreLabel" destination="uc0-rf-r81" id="Zce-J3-SGV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGi-Rq-oB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="213"/>
+        </scene>
+        <!--Developer View Controller-->
+        <scene sceneID="mO5-HR-7bn">
+            <objects>
+                <viewController id="drY-Zo-Ldx" customClass="FLLDeveloperViewController" customModule="FLL2019CityShaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LXs-87-SKn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-DG-PhW">
+                                <rect key="frame" x="318" y="93" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="handleBackButton:" destination="drY-Zo-Ldx" eventType="touchUpInside" id="yPv-8S-zSd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jjc-k5-EEt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VNr-eh-qGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2458" y="252"/>
+        </scene>
+        <!--Strategy View Controller-->
+        <scene sceneID="fy3-pT-MRu">
+            <objects>
+                <viewController id="P1F-fe-tTj" customClass="FLLStrategyViewController" customModule="FLL2019CityShaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c8d-nC-w9O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1u-Dr-0RE">
+                                <rect key="frame" x="318" y="91" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="handleBackButton:" destination="P1F-fe-tTj" eventType="touchUpInside" id="wm8-yd-mQa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8yK-Dq-5nJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDf-qP-U06" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3148" y="252"/>
+        </scene>
+        <!--Links View Controller-->
+        <scene sceneID="NKp-GS-glN">
+            <objects>
+                <viewController id="i8N-OP-mbf" customClass="FLLLinksViewController" customModule="FLL2019CityShaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kOo-Rb-sDc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJf-h8-bJ5">
+                                <rect key="frame" x="318" y="93" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="handleBackButton:" destination="i8N-OP-mbf" eventType="touchUpInside" id="cHA-SK-WBA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Dpz-GR-T56"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AaV-Z5-qQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="879"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="1L8-W6-kLj">
+            <objects>
+                <viewController id="sOh-5p-Hze" customClass="FLLMainViewController" customModule="FLL2019CityShaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="asI-LW-a9T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3p-tx-bHC">
+                                <rect key="frame" x="164" y="348" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Scorer"/>
+                                <connections>
+                                    <segue destination="RVb-4P-T9k" kind="show" id="0OG-HE-sIk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2020-FLL-Logos-RGB_vertical-color" translatesAutoresizingMaskIntoConstraints="NO" id="u3S-6l-TBX">
+                                <rect key="frame" x="32" y="64" width="311" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTz-Dq-yrh">
+                                <rect key="frame" x="167" y="386" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Timer"/>
+                                <connections>
+                                    <segue destination="b9l-dL-2DP" kind="show" id="LxX-ek-wQq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yv1-eu-ltJ">
+                                <rect key="frame" x="158" y="417" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="FLL Links"/>
+                                <connections>
+                                    <segue destination="i8N-OP-mbf" kind="show" id="q7j-yh-8GW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fz-6U-gEc">
+                                <rect key="frame" x="151" y="455" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Developers"/>
+                                <connections>
+                                    <segue destination="drY-Zo-Ldx" kind="show" id="vT9-av-dF6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSN-Jh-5EA">
+                                <rect key="frame" x="158" y="493" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Strategy"/>
+                                <connections>
+                                    <segue destination="P1F-fe-tTj" kind="show" id="3I8-aN-Ghw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="o2Z-LU-aVi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NVk-MD-TWu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Zu-AU-ihI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="212.74362818590706"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BTM-ZL-kfD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bQ-aQ-svF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eQb-vd-0HF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sOh-5p-Hze" kind="relationship" relationship="rootViewController" id="YBT-8J-5Rs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpp-qW-aGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77.599999999999994" y="212.74362818590706"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="2020-FLL-Logos-RGB_vertical-color" width="2051" height="2251"/>
+        <image name="semicircle" width="312" height="126"/>
+    </resources>
+</document>

@@ -1,5 +1,5 @@
 //
-//  FLLMainViewController.swift
+//  FLLTimerViewController.swift
 //  FLL2019CityShaper
 //
 //  Created by user141824 on 8/25/19.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class FLLMainViewController: UIViewController {
+class FLLTimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
     
+    @IBAction func handleBackButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+
 }

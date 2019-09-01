@@ -11,7 +11,7 @@
 		0474D51D22F4FF1100505B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474D51B22F4FF1100505B20 /* LaunchScreen.storyboard */; };
 		04D3E42D22FBDC62007E6726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D3E42C22FBDC62007E6726 /* Assets.xcassets */; };
 		B22AE34E22F5029400F18804 /* FLLMissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22AE34522F5029300F18804 /* FLLMissionTableViewCell.swift */; };
-		B22AE34F22F5029400F18804 /* FLLMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22AE34622F5029300F18804 /* FLLMissions.storyboard */; };
+		B22AE34F22F5029400F18804 /* FLLMIission-old.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22AE34622F5029300F18804 /* FLLMIission-old.storyboard */; };
 		B22AE35022F5029400F18804 /* DetailStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22AE34722F5029300F18804 /* DetailStepperView.xib */; };
 		B22AE35122F5029400F18804 /* DetailStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22AE34822F5029300F18804 /* DetailStepperView.swift */; };
 		B22AE35222F5029400F18804 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22AE34922F5029300F18804 /* DetailView.xib */; };
@@ -20,6 +20,12 @@
 		B22AE35522F5029400F18804 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22AE34C22F5029400F18804 /* ColorModel.swift */; };
 		B22AE35622F5029400F18804 /* FLLMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22AE34D22F5029400F18804 /* FLLMissionsViewController.swift */; };
 		B26B82812312E331002B37F7 /* FLLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B82802312E331002B37F7 /* FLLMainViewController.swift */; };
+		B26B82832312F274002B37F7 /* FLLTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B82822312F274002B37F7 /* FLLTimerViewController.swift */; };
+		B26B82852312F6AB002B37F7 /* FLLLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B82842312F6AB002B37F7 /* FLLLinksViewController.swift */; };
+		B2922CB3231B4C7900774EE2 /* FLLDeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2922CB2231B4C7900774EE2 /* FLLDeveloperViewController.swift */; };
+		B2922CB5231B4D2400774EE2 /* FLLStrategyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2922CB4231B4D2400774EE2 /* FLLStrategyViewController.swift */; };
+		B2B000F8231C202B008FE481 /* FLLMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B000F7231C202B008FE481 /* FLLMissions.storyboard */; };
+		B2B000FA231C21F7008FE481 /* FLLMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B000F9231C21F7008FE481 /* FLLMasterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +35,7 @@
 		0474D51E22F4FF1100505B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D3E42C22FBDC62007E6726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B22AE34522F5029300F18804 /* FLLMissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLLMissionTableViewCell.swift; sourceTree = "<group>"; };
-		B22AE34622F5029300F18804 /* FLLMissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FLLMissions.storyboard; sourceTree = "<group>"; };
+		B22AE34622F5029300F18804 /* FLLMIission-old.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "FLLMIission-old.storyboard"; sourceTree = "<group>"; };
 		B22AE34722F5029300F18804 /* DetailStepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailStepperView.xib; sourceTree = "<group>"; };
 		B22AE34822F5029300F18804 /* DetailStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailStepperView.swift; sourceTree = "<group>"; };
 		B22AE34922F5029300F18804 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
@@ -38,6 +44,12 @@
 		B22AE34C22F5029400F18804 /* ColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		B22AE34D22F5029400F18804 /* FLLMissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLLMissionsViewController.swift; sourceTree = "<group>"; };
 		B26B82802312E331002B37F7 /* FLLMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLLMainViewController.swift; sourceTree = "<group>"; };
+		B26B82822312F274002B37F7 /* FLLTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLLTimerViewController.swift; sourceTree = "<group>"; };
+		B26B82842312F6AB002B37F7 /* FLLLinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLLLinksViewController.swift; sourceTree = "<group>"; };
+		B2922CB2231B4C7900774EE2 /* FLLDeveloperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLLDeveloperViewController.swift; sourceTree = "<group>"; };
+		B2922CB4231B4D2400774EE2 /* FLLStrategyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLLStrategyViewController.swift; sourceTree = "<group>"; };
+		B2B000F7231C202B008FE481 /* FLLMissions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FLLMissions.storyboard; sourceTree = "<group>"; };
+		B2B000F9231C21F7008FE481 /* FLLMasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLLMasterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +87,7 @@
 				B22AE34722F5029300F18804 /* DetailStepperView.xib */,
 				B22AE34A22F5029400F18804 /* DetailView.swift */,
 				B22AE34922F5029300F18804 /* DetailView.xib */,
-				B22AE34622F5029300F18804 /* FLLMissions.storyboard */,
+				B22AE34622F5029300F18804 /* FLLMIission-old.storyboard */,
 				B22AE34D22F5029400F18804 /* FLLMissionsViewController.swift */,
 				04D3E42C22FBDC62007E6726 /* Assets.xcassets */,
 				B22AE34B22F5029400F18804 /* MissionModel.swift */,
@@ -84,6 +96,12 @@
 				0474D51B22F4FF1100505B20 /* LaunchScreen.storyboard */,
 				0474D51E22F4FF1100505B20 /* Info.plist */,
 				B26B82802312E331002B37F7 /* FLLMainViewController.swift */,
+				B26B82822312F274002B37F7 /* FLLTimerViewController.swift */,
+				B26B82842312F6AB002B37F7 /* FLLLinksViewController.swift */,
+				B2922CB2231B4C7900774EE2 /* FLLDeveloperViewController.swift */,
+				B2922CB4231B4D2400774EE2 /* FLLStrategyViewController.swift */,
+				B2B000F7231C202B008FE481 /* FLLMissions.storyboard */,
+				B2B000F9231C21F7008FE481 /* FLLMasterTableViewController.swift */,
 			);
 			path = FLL2019CityShaper;
 			sourceTree = "<group>";
@@ -146,7 +164,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22AE34F22F5029400F18804 /* FLLMissions.storyboard in Resources */,
+				B2B000F8231C202B008FE481 /* FLLMissions.storyboard in Resources */,
+				B22AE34F22F5029400F18804 /* FLLMIission-old.storyboard in Resources */,
 				04D3E42D22FBDC62007E6726 /* Assets.xcassets in Resources */,
 				B22AE35022F5029400F18804 /* DetailStepperView.xib in Resources */,
 				0474D51D22F4FF1100505B20 /* LaunchScreen.storyboard in Resources */,
@@ -162,11 +181,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26B82812312E331002B37F7 /* FLLMainViewController.swift in Sources */,
+				B26B82852312F6AB002B37F7 /* FLLLinksViewController.swift in Sources */,
+				B2922CB5231B4D2400774EE2 /* FLLStrategyViewController.swift in Sources */,
 				B22AE34E22F5029400F18804 /* FLLMissionTableViewCell.swift in Sources */,
+				B26B82832312F274002B37F7 /* FLLTimerViewController.swift in Sources */,
 				B22AE35522F5029400F18804 /* ColorModel.swift in Sources */,
+				B2B000FA231C21F7008FE481 /* FLLMasterTableViewController.swift in Sources */,
 				B22AE35422F5029400F18804 /* MissionModel.swift in Sources */,
 				B22AE35622F5029400F18804 /* FLLMissionsViewController.swift in Sources */,
 				0474D51322F4FF0F00505B20 /* AppDelegate.swift in Sources */,
+				B2922CB3231B4C7900774EE2 /* FLLDeveloperViewController.swift in Sources */,
 				B22AE35322F5029400F18804 /* DetailView.swift in Sources */,
 				B22AE35122F5029400F18804 /* DetailStepperView.swift in Sources */,
 			);
