@@ -16,7 +16,7 @@ class FLLLinksViewController: UIViewController {
     override func  loadView() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self as? WKUIDelegate
+//        webView.uiDelegate = self as? WKUIDelegate
         view = webView
     }
   
