@@ -44,25 +44,24 @@ class FLLMissionsViewController: UIViewController {
 
     }
     
-    
     @IBAction func handleReset(_ sender: UIButton) {
-        
         let alert = UIAlertController(title: "Restart Scoring?", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
             self.missionModels = self.loadMissionModels()
             self.calculateTotalScore()
             self.tableView.reloadData()
             self.scrollToFirstRow()
-            
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
     func scrollToFirstRow() {
         let indexPath = NSIndexPath(row: 0, section: 0)
         self.tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
     }
 }
+
 extension FLLMissionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return missionModels.count
@@ -103,6 +102,9 @@ extension FLLMissionsViewController: UITableViewDelegate {
 extension FLLMissionsViewController: FLLMissionTableViewCellDelegate {
     func shouldGoToMainViewController() {
         navigationController?.popViewController(animated: true)
+        if let controller = navigationController?.viewControllers[0] as? FLLMasterTableViewController {
+            controller.scorer = self
+        }
     }
     
     func didUpdateMission(mission: Mission) {

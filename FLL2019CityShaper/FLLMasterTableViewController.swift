@@ -9,6 +9,8 @@
 import UIKit
 
 class FLLMasterTableViewController: UITableViewController {
+    
+    var scorer: FLLMissionsViewController?
     let sections = ["Tools","FLL Links"]
     let tools = ["Scorer"]
     let fllLinks = ["Challenge Updates", "Game Guide", "Participation Rules", "Rubrics"]
@@ -16,15 +18,18 @@ class FLLMasterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let color = UIColor(red: 37/255, green: 19/255, blue: 82/255, alpha: 1)
+        tableView.backgroundView?.backgroundColor = color
+        tableView.backgroundColor = color
     }
     
-    // MARK: - Table view data source
+    override func viewWillAppear(_ animated: Bool) {
+        let robotView = UIImageView(image: UIImage(named: "M0.png"))
+        //robotView.frame = (tableView.backgroundView?.frame)!
+        robotView.alpha = 0.2
+        robotView.contentMode = .scaleAspectFill
+        tableView.backgroundView = robotView
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -39,36 +44,23 @@ class FLLMasterTableViewController: UITableViewController {
             return fllLinks.count
         }
     }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "masterCell", for: indexPath)
         cell.textLabel?.font = UIFont(name: "Futura", size: 18)
-        
+        cell.textLabel?.textColor = .white
         if indexPath.section == 0 {
             cell.textLabel?.text = tools[indexPath.row]
         } else {
             cell.textLabel?.text = fllLinks[indexPath.row]
         }
-        
-        /* switch indexPath.row {
-         case 0:
-         cell.textLabel?.text = "Scorer"
-         case 1:
-         cell.textLabel?.text = "Timer"
-         case 2:
-         cell.textLabel?.text = "FLL Links"
-         case 3:
-         cell.textLabel?.text = "Developers"
-         case 4:
-         cell.textLabel?.text = "Strategy"
-         default:
-         cell.textLabel?.text = "Resources"
-         } */
-        
-        
-        
+        let colorView = UIView(frame: cell.frame)
+        colorView.backgroundColor = UIColor(red: 240/255, green: 79/255, blue: 86/255, alpha: 0.5)
+        cell.selectedBackgroundView = colorView
         return cell
     }
     
@@ -79,54 +71,23 @@ class FLLMasterTableViewController: UITableViewController {
             linksController.fllURL = URL(string: fllWebLinks[indexPath.row])
             splitViewController?.showDetailViewController(linksController, sender: nil)
         } else {
-            splitViewController?.showDetailViewController(storyBoard.instantiateViewController(withIdentifier: "scorer"), sender: nil)
+            if let scorer = scorer {
+                  splitViewController?.showDetailViewController(scorer, sender: nil)
+            }
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
+    }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor(red: 142/255, green: 132/255, blue: 244/255, alpha: 0.7)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+    }
 }
