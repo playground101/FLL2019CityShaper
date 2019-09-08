@@ -26,6 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -122,7 +123,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-Yj-LG9">
-                                                    <rect key="frame" x="25" y="40" width="20" height="20"/>
+                                                    <rect key="frame" x="31" y="40" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="B1O-Cx-5TN"/>
                                                         <constraint firstAttribute="width" constant="20" id="LXd-O0-z1b"/>
@@ -139,13 +140,13 @@
                                                 <constraint firstItem="yTI-rk-yRO" firstAttribute="leading" secondItem="8p0-NJ-rtW" secondAttribute="leadingMargin" constant="16" id="1We-c5-flV"/>
                                                 <constraint firstItem="NbT-4v-cUb" firstAttribute="centerX" secondItem="8p0-NJ-rtW" secondAttribute="centerX" id="1bL-Gw-Xxd"/>
                                                 <constraint firstItem="yTI-rk-yRO" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="topMargin" constant="70" id="22t-fJ-DaZ"/>
-                                                <constraint firstItem="NbT-4v-cUb" firstAttribute="leading" secondItem="iNm-Yj-LG9" secondAttribute="trailing" constant="-45" id="5vJ-jx-Ck2"/>
                                                 <constraint firstItem="dqy-Px-BXt" firstAttribute="top" secondItem="bKD-oM-wKb" secondAttribute="bottom" constant="20" id="63c-8g-NUJ"/>
                                                 <constraint firstItem="icU-0Y-rDf" firstAttribute="centerY" secondItem="yTI-rk-yRO" secondAttribute="centerY" id="6hB-Mb-E7o"/>
                                                 <constraint firstItem="NbT-4v-cUb" firstAttribute="height" secondItem="8p0-NJ-rtW" secondAttribute="height" id="8pf-OU-P81"/>
                                                 <constraint firstItem="NbT-4v-cUb" firstAttribute="width" secondItem="8p0-NJ-rtW" secondAttribute="width" id="AkN-4o-hqy"/>
                                                 <constraint firstItem="bKD-oM-wKb" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="top" constant="120" id="KdS-LX-yFD"/>
                                                 <constraint firstItem="icU-0Y-rDf" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="topMargin" constant="50" id="NIW-1c-QfE"/>
+                                                <constraint firstItem="yTI-rk-yRO" firstAttribute="leading" secondItem="iNm-Yj-LG9" secondAttribute="leading" id="Xk3-JC-DFb"/>
                                                 <constraint firstItem="icU-0Y-rDf" firstAttribute="leading" secondItem="yTI-rk-yRO" secondAttribute="trailing" constant="26" id="d8M-jW-fl9"/>
                                                 <constraint firstItem="bKD-oM-wKb" firstAttribute="leading" secondItem="8p0-NJ-rtW" secondAttribute="leadingMargin" constant="16" id="dF5-i2-SRA"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="icU-0Y-rDf" secondAttribute="trailing" constant="20" id="huu-Vb-2n5"/>
