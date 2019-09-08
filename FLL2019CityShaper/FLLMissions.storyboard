@@ -98,13 +98,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="573.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTI-rk-yRO">
-                                                    <rect key="frame" x="31" y="51" width="84" height="45"/>
+                                                    <rect key="frame" x="31" y="81" width="84" height="45"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="34"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="icU-0Y-rDf">
-                                                    <rect key="frame" x="141" y="31" width="147.5" height="85"/>
+                                                    <rect key="frame" x="141" y="61" width="147.5" height="85"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -121,9 +121,13 @@
                                                         <constraint firstAttribute="height" constant="200" id="SVA-bC-S9d"/>
                                                     </constraints>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-Yj-LG9">
-                                                    <rect key="frame" x="329" y="58.5" width="41" height="30"/>
-                                                    <state key="normal" title="Home">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-Yj-LG9">
+                                                    <rect key="frame" x="25" y="40" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="B1O-Cx-5TN"/>
+                                                        <constraint firstAttribute="width" constant="20" id="LXd-O0-z1b"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Home" image="hamburger">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -134,20 +138,19 @@
                                             <constraints>
                                                 <constraint firstItem="yTI-rk-yRO" firstAttribute="leading" secondItem="8p0-NJ-rtW" secondAttribute="leadingMargin" constant="16" id="1We-c5-flV"/>
                                                 <constraint firstItem="NbT-4v-cUb" firstAttribute="centerX" secondItem="8p0-NJ-rtW" secondAttribute="centerX" id="1bL-Gw-Xxd"/>
-                                                <constraint firstItem="yTI-rk-yRO" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="topMargin" constant="40" id="22t-fJ-DaZ"/>
-                                                <constraint firstItem="iNm-Yj-LG9" firstAttribute="centerY" secondItem="icU-0Y-rDf" secondAttribute="centerY" id="3sp-Pg-Vat"/>
+                                                <constraint firstItem="yTI-rk-yRO" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="topMargin" constant="70" id="22t-fJ-DaZ"/>
+                                                <constraint firstItem="NbT-4v-cUb" firstAttribute="leading" secondItem="iNm-Yj-LG9" secondAttribute="trailing" constant="-45" id="5vJ-jx-Ck2"/>
                                                 <constraint firstItem="dqy-Px-BXt" firstAttribute="top" secondItem="bKD-oM-wKb" secondAttribute="bottom" constant="20" id="63c-8g-NUJ"/>
                                                 <constraint firstItem="icU-0Y-rDf" firstAttribute="centerY" secondItem="yTI-rk-yRO" secondAttribute="centerY" id="6hB-Mb-E7o"/>
                                                 <constraint firstItem="NbT-4v-cUb" firstAttribute="height" secondItem="8p0-NJ-rtW" secondAttribute="height" id="8pf-OU-P81"/>
                                                 <constraint firstItem="NbT-4v-cUb" firstAttribute="width" secondItem="8p0-NJ-rtW" secondAttribute="width" id="AkN-4o-hqy"/>
                                                 <constraint firstItem="bKD-oM-wKb" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="top" constant="120" id="KdS-LX-yFD"/>
-                                                <constraint firstItem="icU-0Y-rDf" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="topMargin" constant="20" id="NIW-1c-QfE"/>
-                                                <constraint firstItem="iNm-Yj-LG9" firstAttribute="trailing" secondItem="8p0-NJ-rtW" secondAttribute="trailingMargin" constant="10" id="Qbz-fW-Kwo"/>
+                                                <constraint firstItem="icU-0Y-rDf" firstAttribute="top" secondItem="8p0-NJ-rtW" secondAttribute="topMargin" constant="50" id="NIW-1c-QfE"/>
                                                 <constraint firstItem="icU-0Y-rDf" firstAttribute="leading" secondItem="yTI-rk-yRO" secondAttribute="trailing" constant="26" id="d8M-jW-fl9"/>
                                                 <constraint firstItem="bKD-oM-wKb" firstAttribute="leading" secondItem="8p0-NJ-rtW" secondAttribute="leadingMargin" constant="16" id="dF5-i2-SRA"/>
-                                                <constraint firstItem="iNm-Yj-LG9" firstAttribute="centerY" secondItem="icU-0Y-rDf" secondAttribute="centerY" id="gCY-8b-hwL"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="icU-0Y-rDf" secondAttribute="trailing" constant="20" id="huu-Vb-2n5"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dqy-Px-BXt" secondAttribute="trailing" constant="16" id="qhA-1K-Sqw"/>
+                                                <constraint firstItem="NbT-4v-cUb" firstAttribute="top" secondItem="iNm-Yj-LG9" secondAttribute="bottom" constant="-60" id="u5q-IS-ohc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bKD-oM-wKb" secondAttribute="trailing" constant="16" id="wFj-MK-b5Q"/>
                                                 <constraint firstItem="NbT-4v-cUb" firstAttribute="centerY" secondItem="8p0-NJ-rtW" secondAttribute="centerY" id="zae-fd-wei"/>
                                             </constraints>
@@ -240,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wA-tj-EPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="643"/>
+            <point key="canvasLocation" x="856.79999999999995" y="642.72863568215894"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="FbT-bj-rrP">
@@ -344,6 +347,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hamburger" width="417" height="417"/>
         <image name="semicircle" width="312" height="126"/>
     </resources>
 </document>
