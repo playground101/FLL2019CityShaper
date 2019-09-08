@@ -11,8 +11,8 @@ import UIKit
 class FLLMasterTableViewController: UITableViewController {
     let sections = ["Tools","FLL Links"]
     let tools = ["Scorer"]
-    let fllLinks = ["Challenge Updates", "Game Guide", "Participation Rules", "Rubrics", "Score Sheet"]
-    let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "http://firstlegoleague.org/challenge?__hstc=212927755.daf74c797b90fa054b2a6a929d48d651.1567956299073.1567956299073.1567956299073.1&__hssc=212927755.3.1567956299074&__hsfp=772856689#block-block-17", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-scoresheet.pdf"]
+    let fllLinks = ["Challenge Updates", "Game Guide", "Participation Rules", "Rubrics"]
+    let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class FLLMasterTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "masterCell", for: indexPath)
-        cell.textLabel?.font = UIFont(name: "Futura", size: 20)
+        cell.textLabel?.font = UIFont(name: "Futura", size: 18)
         
         if indexPath.section == 0 {
             cell.textLabel?.text = tools[indexPath.row]
@@ -75,7 +75,9 @@ class FLLMasterTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "FLLMissions", bundle: nil)
         if indexPath.section == 1 {
-            splitViewController?.showDetailViewController(storyBoard.instantiateViewController(withIdentifier: "flllinks"), sender: nil)
+            let linksController = storyBoard.instantiateViewController(withIdentifier: "flllinks") as! FLLLinksViewController
+            linksController.fllURL = URL(string: fllWebLinks[indexPath.row])
+            splitViewController?.showDetailViewController(linksController, sender: nil)
         } else {
             splitViewController?.showDetailViewController(storyBoard.instantiateViewController(withIdentifier: "scorer"), sender: nil)
         }
