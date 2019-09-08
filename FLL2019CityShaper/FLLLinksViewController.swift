@@ -9,7 +9,9 @@
 import UIKit
 import WebKit
 class FLLLinksViewController: UIViewController {
-
+    
+ var fllURL = URL(string: "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf")
+    
     var webView: WKWebView!
     override func  loadView() {
         let webConfiguration = WKWebViewConfiguration()
@@ -21,8 +23,7 @@ class FLLLinksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string: "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf")
-        let myRequest = URLRequest(url: myURL!)
+        let myRequest = URLRequest(url: fllURL!)
         webView.load(myRequest)
         webView.allowsBackForwardNavigationGestures = true
         
