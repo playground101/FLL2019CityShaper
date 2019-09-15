@@ -11,11 +11,12 @@ import UIKit
 class FLLMasterTableViewController: UITableViewController {
     
     var scorer: FLLMissionsViewController?
-    let sections = ["Tools","FLL Links"]
+    let sections = ["Tools","FLL Links", "Contact FIRST"]
     let tools = ["Scorer"]
     let fllLinks = ["CITY SHAPER Challenge", "Challenge Updates", "Game Guide", "Participation Rules", "Rubrics"]
     let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf"]
-    
+    let contactTitleArray = ["Robot Game questions", "Project questions", "Judging questions", "Team questions"]
+    let contactEMailArray = ["fllrobotgame@firstinspires.org", "fllprojects@firstinspires.org", "flljudge@firstinspires.org", "firstlegoleague@firstinspires.org"]
     override func viewDidLoad() {
         super.viewDidLoad()
         let color = UIColor(red: 37/255, green: 19/255, blue: 82/255, alpha: 1)
