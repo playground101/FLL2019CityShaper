@@ -74,7 +74,9 @@ class FLLMasterTableViewController: UITableViewController {
         let storyBoard = UIStoryboard(name: "FLLMissions", bundle: nil)
         if indexPath.section == 1 {
             if fllLinks[indexPath.row] == "Project Resources" {
-                
+                if let url = URL(string: fllWebLinks[indexPath.row]) {
+                    UIApplication.shared.open(url)
+                }
             } else {
             let linksController = storyBoard.instantiateViewController(withIdentifier: "flllinks") as! FLLLinksViewController
             linksController.fllURL = URL(string: fllWebLinks[indexPath.row])
