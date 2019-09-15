@@ -13,8 +13,8 @@ class FLLMasterTableViewController: UITableViewController {
     var scorer: FLLMissionsViewController?
     let sections = ["Tools","FLL Links"]
     let tools = ["Scorer"]
-    let fllLinks = ["Challenge Updates", "Game Guide", "Participation Rules", "Rubrics"]
-    let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf"]
+    let fllLinks = ["CITY SHAPER Challenge", "Challenge Updates", "Game Guide", "Participation Rules", "Rubrics"]
+    let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class FLLMasterTableViewController: UITableViewController {
             cell.textLabel?.text = fllLinks[indexPath.row]
         }
         let colorView = UIView(frame: cell.frame)
-        colorView.backgroundColor = UIColor(red: 240/255, green: 79/255, blue: 86/255, alpha: 0.5)
+        colorView.backgroundColor = UIColor(red: 142/255, green: 132/255, blue: 244/255, alpha: 0.3)
         cell.selectedBackgroundView = colorView
         return cell
     }
@@ -86,8 +86,9 @@ class FLLMasterTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
-        view.tintColor = UIColor(red: 142/255, green: 132/255, blue: 244/255, alpha: 0.7)
+        view.tintColor = UIColor(red: 142/255, green: 132/255, blue: 244/255, alpha: 1)
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont(name: "Futura-Bold", size: 20)
     }
 }
