@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MessageUI
 class FLLMasterTableViewController: UITableViewController {
     
     var scorer: FLLMissionsViewController?
@@ -41,8 +41,10 @@ class FLLMasterTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
             return tools.count
-        } else {
+        } else if section == 1 {
             return fllLinks.count
+        } else {
+            return contactTitleArray.count
         }
     }
     
@@ -56,8 +58,10 @@ class FLLMasterTableViewController: UITableViewController {
         cell.textLabel?.textColor = .white
         if indexPath.section == 0 {
             cell.textLabel?.text = tools[indexPath.row]
-        } else {
+        } else if indexPath.section == 1 {
             cell.textLabel?.text = fllLinks[indexPath.row]
+        } else {
+            cell.textLabel?.text = contactTitleArray[indexPath.row]
         }
         let colorView = UIView(frame: cell.frame)
         colorView.backgroundColor = UIColor(red: 142/255, green: 132/255, blue: 244/255, alpha: 0.3)
@@ -71,9 +75,11 @@ class FLLMasterTableViewController: UITableViewController {
             let linksController = storyBoard.instantiateViewController(withIdentifier: "flllinks") as! FLLLinksViewController
             linksController.fllURL = URL(string: fllWebLinks[indexPath.row])
             splitViewController?.showDetailViewController(linksController, sender: nil)
+        } else if indexPath.section == 2 {
+            createMailComposer(recipient: contactEMailArray[indexPath.row])
         } else {
             if let scorer = scorer {
-                  splitViewController?.showDetailViewController(scorer, sender: nil)
+                splitViewController?.showDetailViewController(scorer, sender: nil)
             }
         }
     }
@@ -91,5 +97,24 @@ class FLLMasterTableViewController: UITableViewController {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.white
         header.textLabel?.font = UIFont(name: "Futura-Bold", size: 20)
+    }
+}
+extension FLLMasterTableViewController: MFMailComposeViewControllerDelegate {
+    func createMailComposer(recipient: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self as! MFMailComposeViewControllerDelegate
+            composeVC.setToRecipients([recipient])
+            composeVC.setSubject("")
+            composeVC.setMessageBody("", isHTML: false)
+            self.present(composeVC, animated: true, completion: nil)
+        }
+    }
+    func mailComposeController(controller: MFMailComposeViewController,
+                               didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        // Check the result or perform other tasks.
+        
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
     }
 }
