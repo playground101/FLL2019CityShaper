@@ -13,8 +13,8 @@ class FLLMasterTableViewController: UITableViewController {
     var scorer: FLLMissionsViewController?
     let sections = ["Tools","FLL Links", "Contact FIRST"]
     let tools = ["Scorer"]
-    let fllLinks = ["CITY SHAPER Challenge", "Challenge Updates", "Game Guide", "Participation Rules", "Rubrics"]
-    let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf"]
+    let fllLinks = ["CITY SHAPER Challenge", "Challenge Updates", "Game Guide", "Participation Rules", "Rubrics", "Project Resources"]
+    let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf", "https://fllblog.wordpress.com/2019/08/09/resources-to-build-your-innovation-project/"]
     let contactTitleArray = ["Robot Game questions", "Project questions", "Judging questions", "Team questions"]
     let contactEMailArray = ["fllrobotgame@firstinspires.org", "fllprojects@firstinspires.org", "flljudge@firstinspires.org", "firstlegoleague@firstinspires.org"]
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class FLLMasterTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return sections.count
     }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -72,9 +73,13 @@ class FLLMasterTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "FLLMissions", bundle: nil)
         if indexPath.section == 1 {
+            if fllLinks[indexPath.row] == "Project Resources" {
+                
+            } else {
             let linksController = storyBoard.instantiateViewController(withIdentifier: "flllinks") as! FLLLinksViewController
             linksController.fllURL = URL(string: fllWebLinks[indexPath.row])
             splitViewController?.showDetailViewController(linksController, sender: nil)
+            }
         } else if indexPath.section == 2 {
             createMailComposer(recipient: contactEMailArray[indexPath.row])
         } else {
@@ -97,6 +102,13 @@ class FLLMasterTableViewController: UITableViewController {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.white
         header.textLabel?.font = UIFont(name: "Futura-Bold", size: 20)
+    }
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        //if section == 2 {
+            let footer = view as! UITableViewHeaderFooterView
+            footer.textLabel?.text = "TEST"
+            
+     //   }
     }
 }
 extension FLLMasterTableViewController: MFMailComposeViewControllerDelegate {
