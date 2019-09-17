@@ -9,9 +9,8 @@
 import UIKit
 import MessageUI
 class FLLMasterTableViewController: UITableViewController {
-    
     var scorer: FLLMissionsViewController?
-    let sections = ["Tools","FLL Links", "Contact FIRST"]
+    let sections = ["Tools","FLL Links", "Email FIRST LEGO League"]
     let tools = ["Scorer"]
     let fllLinks = ["CITY SHAPER Challenge", "Challenge Updates", "Game Guide", "Participation Rules", "Rubrics", "Project Resources"]
     let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf", "https://fllblog.wordpress.com/2019/08/09/resources-to-build-your-innovation-project/"]
@@ -117,18 +116,15 @@ extension FLLMasterTableViewController: MFMailComposeViewControllerDelegate {
     func createMailComposer(recipient: String) {
         if MFMailComposeViewController.canSendMail() {
             let composeVC = MFMailComposeViewController()
-            composeVC.mailComposeDelegate = self as! MFMailComposeViewControllerDelegate
+            composeVC.mailComposeDelegate = self
             composeVC.setToRecipients([recipient])
             composeVC.setSubject("")
             composeVC.setMessageBody("", isHTML: false)
             self.present(composeVC, animated: true, completion: nil)
         }
     }
-    func mailComposeController(controller: MFMailComposeViewController,
-                               didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        // Check the result or perform other tasks.
-        
-        // Dismiss the mail compose view controller.
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
 }
