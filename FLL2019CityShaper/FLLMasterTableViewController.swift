@@ -10,12 +10,15 @@ import UIKit
 import MessageUI
 class FLLMasterTableViewController: UITableViewController {
     var scorer: FLLMissionsViewController?
-    let sections = ["Tools","FLL Links", "Email FIRST LEGO League"]
+    let sections = ["Tools","FLL Links", "Email FIRST LEGO League", "Mission Building Instructions"]
     let tools = ["Scorer"]
     let fllLinks = ["CITY SHAPER Challenge", "Challenge Updates", "Game Guide", "Participation Rules", "Rubrics", "Project Resources"]
     let fllWebLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-challenge-updates.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/city-shaper-game-guide-pdf.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-participation-rules.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/first-lego-league-rubrics.pdf", "https://fllblog.wordpress.com/2019/08/09/resources-to-build-your-innovation-project/"]
     let contactTitleArray = ["Robot Game questions", "Project questions", "Judging questions", "Team questions"]
     let contactEMailArray = ["fllrobotgame@firstinspires.org", "fllprojects@firstinspires.org", "flljudge@firstinspires.org", "firstlegoleague@firstinspires.org"]
+    let bagTitles = ["Bag 1: Bat, Precision Tokens, Inspection Drone, Bridge Entrance, Bridge Top", "Bag 2: Bridge Ramp", "Bag 3: Steel Structure, Tree", "Bag 4: Crane", "Bag 5: Red Building Units", "Bag 6: Tan Building Units", "Bag 7: White Building Units, Blue Building Units, Building Upgrades", "Bag 8: Test Building, Elevator", "Bag 9: Swing, Traffic Jam", "Bag 10: Innovation Elements"]
+    let bagTitleLinks = ["https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book1_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book2_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book3_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book4_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book5_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book6_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book7_ENUS_19Aug2019.pdf" , "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book8_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book9_ENUS_19Aug2019.pdf", "https://firstinspiresst01.blob.core.windows.net/fll/2020/mission-models/english/45809_Book10_ENUS_19Aug2019.pdf"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let color = UIColor(red: 37/255, green: 19/255, blue: 82/255, alpha: 1)
@@ -43,8 +46,10 @@ class FLLMasterTableViewController: UITableViewController {
             return tools.count
         } else if section == 1 {
             return fllLinks.count
-        } else {
+        } else if section == 2 {
             return contactTitleArray.count
+        } else {
+            return bagTitleLinks.count
         }
     }
     
@@ -60,9 +65,12 @@ class FLLMasterTableViewController: UITableViewController {
             cell.textLabel?.text = tools[indexPath.row]
         } else if indexPath.section == 1 {
             cell.textLabel?.text = fllLinks[indexPath.row]
-        } else {
+        } else if indexPath.section == 2 {
             cell.textLabel?.text = contactTitleArray[indexPath.row]
+        } else {
+            cell.textLabel?.text = bagTitles[indexPath.row]
         }
+        cell.textLabel?.numberOfLines = 0
         let colorView = UIView(frame: cell.frame)
         colorView.backgroundColor = UIColor(red: 142/255, green: 132/255, blue: 244/255, alpha: 0.3)
         cell.selectedBackgroundView = colorView
@@ -77,13 +85,18 @@ class FLLMasterTableViewController: UITableViewController {
                     UIApplication.shared.open(url)
                 }
             } else {
-            let linksController = storyBoard.instantiateViewController(withIdentifier: "flllinks") as! FLLLinksViewController
-            linksController.fllURL = URL(string: fllWebLinks[indexPath.row])
-            splitViewController?.showDetailViewController(linksController, sender: nil)
+                let linksController = storyBoard.instantiateViewController(withIdentifier: "flllinks") as! FLLLinksViewController
+                linksController.fllURL = URL(string: fllWebLinks[indexPath.row])
+                splitViewController?.showDetailViewController(linksController, sender: nil)
             }
         } else if indexPath.section == 2 {
             createMailComposer(recipient: contactEMailArray[indexPath.row])
-        } else {
+        } else if indexPath.section == 3 {
+            let linksController = storyBoard.instantiateViewController(withIdentifier: "flllinks") as! FLLLinksViewController
+            linksController.fllURL = URL(string: bagTitleLinks[indexPath.row])
+            splitViewController?.showDetailViewController(linksController, sender: nil)
+        }
+        else {
             if let scorer = scorer {
                 splitViewController?.showDetailViewController(scorer, sender: nil)
             }
@@ -95,7 +108,8 @@ class FLLMasterTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+            return 60.0
+        
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
@@ -106,10 +120,10 @@ class FLLMasterTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         //if section == 2 {
-            let footer = view as! UITableViewHeaderFooterView
-            footer.textLabel?.text = "TEST"
-            
-     //   }
+        let footer = view as! UITableViewHeaderFooterView
+        footer.textLabel?.text = "TEST"
+        
+        //   }
     }
 }
 extension FLLMasterTableViewController: MFMailComposeViewControllerDelegate {
